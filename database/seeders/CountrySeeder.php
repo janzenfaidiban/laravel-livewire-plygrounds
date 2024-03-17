@@ -14,7 +14,6 @@ class CountrySeeder extends Seeder
      */
     public function run(): void
     {
-        
         Country::create([
             'name' => 'Papua New Guinea',
             'slug' => 'papua-new-guinea',

@@ -52,15 +52,49 @@ composer require barryvdh/laravel-debugbar --dev
 ### Controllers
 <ul>
     <li>CountryController</li>
+    <ul>
+        <li>✅ index</li>
+        <li>⏳ show</li>
+        <li>⏳ create</li>
+        <li>⏳ edit</li>
+        <li>⏳ delete</li>
+    </ul>
     <li>CityController</li>
+    <ul>
+        <li>✅ index</li>
+        <li>⏳ show</li>
+        <li>⏳ create</li>
+        <li>⏳ edit</li>
+        <li>⏳ delete</li>
+    </ul>
     <li>ShopController</li>
+    <ul>
+        <li>✅ index</li>
+        <li>⏳ show</li>
+        <li>⏳ create</li>
+        <li>⏳ edit</li>
+        <li>⏳ delete</li>
+    </ul>
 </ul>
 
 ### Seeders
 <ul>
     <li>CountrySeeder</li>
+    <ul>
+        <li>✅ name</li>
+        <li>✅ slug</li>
+        <li>✅ flag</li>
+    </ul>
     <li>CitySeeder</li>
+    <ul>
+        <li>✅ name</li>
+        <li>⏳ slug</li>
+    </ul>
     <li>ShopSeeder</li>
+    <ul>
+        <li>✅ name</li>
+        <li>⏳ slug</li>
+    </ul>
 </ul>
 
 ### Views
@@ -69,13 +103,27 @@ composer require barryvdh/laravel-debugbar --dev
     <li>country</li>
     <ul>
         <li>✅ index</li>
-        <li>show</li>
-        <li>create</li>
-        <li>edit</li>
-        <li>modal > delete</li>
+        <li>⏳ show</li>
+        <li>⏳ create</li>
+        <li>⏳ edit</li>
+        <li>⏳ modal > delete</li>
     </ul>
     <li>city</li>
+    <ul>
+        <li>✅ index</li>
+        <li>⏳ show</li>
+        <li>⏳ create</li>
+        <li>⏳ edit</li>
+        <li>⏳ modal > delete</li>
+    </ul>
     <li>shop</li>
+    <ul>
+        <li>✅ index</li>
+        <li>⏳ show</li>
+        <li>⏳ create</li>
+        <li>⏳ edit</li>
+        <li>⏳ modal > delete</li>
+    </ul>
 </ul>
 
 ## Livewire
