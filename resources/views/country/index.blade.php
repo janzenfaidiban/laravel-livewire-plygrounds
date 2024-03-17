@@ -10,6 +10,9 @@
             <div class="col">
                 Total : {{  $collection->count() }}
             </div>
+            <div class="col text-end">
+                <a href="{{ route('country.create') }}" class="btn btn-sm btn-dark">Create</a>
+            </div>
         </div>
     </div>
     <div class="card-body">

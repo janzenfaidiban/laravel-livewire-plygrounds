@@ -1,5 +1,9 @@
 # Laravel Playground
 
+## Project Overview
+
+<img src="public/images/country.png">
+
 ## Laravel Eloquent: Deeper Relationships with One Query
 
 Tutorial video by Laravel Daily
@@ -38,3 +42,17 @@ Installation using composer
 ```
 composer require barryvdh/laravel-debugbar --dev
 ```
+
+# TODOS
+
+## Laravels
+
+### Models
+
+### Controllers
+
+### Seeders
+
+### Views
+
+## Livewire
