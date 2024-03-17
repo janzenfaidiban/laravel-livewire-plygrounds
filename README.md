@@ -43,6 +43,11 @@ composer require barryvdh/laravel-debugbar --dev
 ## Laravels
 
 ### Models
+<ul>
+    <li>Country</li>
+    <li>City</li>
+    <li>Shop</li>
+</ul>
 
 ### Controllers
 <ul>
