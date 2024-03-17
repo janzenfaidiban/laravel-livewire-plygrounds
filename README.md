@@ -4,11 +4,6 @@
 
 <img src="public/images/country.png">
 
-## Laravel Eloquent: Deeper Relationships with One Query
-
-Tutorial video by Laravel Daily
-https://youtu.be/5s-_SnVl-1g?si=rz_TAErEmOtUR2JS
-
 ## Installation
 
 ### Download project
@@ -56,3 +51,12 @@ composer require barryvdh/laravel-debugbar --dev
 ### Views
 
 ## Livewire
+
+# Learning Sources
+
+Vieos, articles, and urls from any other platforms you can mention bellow here.
+
+## Laravel Eloquent: Deeper Relationships with One Query
+
+Tutorial video by Laravel Daily
+https://youtu.be/5s-_SnVl-1g?si=rz_TAErEmOtUR2JS
