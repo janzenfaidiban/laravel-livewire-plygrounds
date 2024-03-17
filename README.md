@@ -45,10 +45,25 @@ composer require barryvdh/laravel-debugbar --dev
 ### Models
 
 ### Controllers
+    <ul>
+        <li>CountryController</li>
+        <li>CityController</li>
+        <li>ShopController</li>
+    </ul>
 
 ### Seeders
+    <ul>
+        <li>CountrySeeder</li>
+        <li>CitySeeder</li>
+        <li>ShopSeeder</li>
+    </ul>
 
 ### Views
+    <ul>
+        <li>country</li>
+        <li>city</li>
+        <li>shop</li>
+    </ul>
 
 ## Livewire
 
