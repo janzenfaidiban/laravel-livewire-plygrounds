@@ -67,6 +67,13 @@ composer require barryvdh/laravel-debugbar --dev
 
 <ul>
     <li>country</li>
+    <ul>
+        <li>✅ index</li>
+        <li>show</li>
+        <li>create</li>
+        <li>edit</li>
+        <li>modal > delete</li>
+    </ul>
     <li>city</li>
     <li>shop</li>
 </ul>
