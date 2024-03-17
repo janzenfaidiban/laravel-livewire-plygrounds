@@ -35,7 +35,7 @@
                     <td>{{ $item->id }}</td>
                     <td>🛍️ {{ $item->name }}</td>
                     <td>🏙️ {{ $item->city->name }}</td>
-                    <td>🗺️ {{ $item->city->country->name }}</td>
+                    <td><img src="{{ $item->city->country->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->city->country->name }}</td>
                     <td>{{ $item->updated_at }}</td>
                     <td>{{ $item->created_at }}</td>
                     <td>

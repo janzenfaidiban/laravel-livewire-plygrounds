@@ -24,7 +24,7 @@ Route::controller(CountryController::class)->group(function(){
 });
 
 // cities
-Route::controller(CcityController::class)->group(function(){
+Route::controller(CityController::class)->group(function(){
 
     Route::get('city','index')->name('city');
     Route::get('city/create','create')->name('city.create');

@@ -18,4 +18,29 @@ class CountryController extends Controller
         $item = Country::where('id', $id)->first();
         return view('country.show', compact('item'));
     }
+
+    public function create()
+    {
+        // return view('country.create');
+    }
+
+    public function store(Request $request)
+    {
+        // 
+    }
+
+    public function edit($id)
+    {
+        // return view('country.edit');
+    }
+
+    public function update(Request $request)
+    {
+        // 
+    }
+
+    public function delete($id)
+    {
+        // 
+    }
 }

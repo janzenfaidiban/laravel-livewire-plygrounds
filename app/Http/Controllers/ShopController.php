@@ -12,4 +12,29 @@ class ShopController extends Controller
         $collection = Shop::with('city')->get();
         return view('shop.index', compact('collection'));
     }
+
+    public function create()
+    {
+        // return view('shop.create');
+    }
+
+    public function store(Request $request)
+    {
+        // 
+    }
+
+    public function edit($id)
+    {
+        // return view('shop.edit');
+    }
+
+    public function update(Request $request)
+    {
+        // 
+    }
+
+    public function delete($id)
+    {
+        // 
+    }
 }

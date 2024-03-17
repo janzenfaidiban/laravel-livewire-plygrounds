@@ -18,10 +18,11 @@
                 <tr>
                     <th>no</th>
                     <th>name</th>
+                    <th>coordinates</th>
                     <th>country</th>
                     <th>shops</th>
-                    <th>updated_at</th>
-                    <th>created_at</th>
+                    {{-- <th>updated_at</th>
+                    <th>created_at</th> --}}
                     <th></th>
                 </tr>
             </thead>
@@ -30,10 +31,11 @@
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td>🏙️ {{ $item->name }}</td>
-                    <td>🗺️ {{ $item->country->name }}</td>
+                    <td><a href="{{ $item->coordinatesUrl }}" target="_blank">{{ $item->coordinates }}</a></td>
+                    <td><img src="{{ $item->country->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->country->name }}</td>
                     <td>{{ $item->shops->count() }}</td>
-                    <td>{{ $item->updated_at }}</td>
-                    <td>{{ $item->created_at }}</td>
+                    {{-- <td>{{ $item->updated_at }}</td>
+                    <td>{{ $item->created_at }}</td> --}}
                     <td>
                         <a href="" class="btn btn-sm btn-outline-dark">show</a>
                         <a href="" class="btn btn-sm btn-outline-dark">edit</a>

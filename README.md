@@ -49,6 +49,13 @@ composer require barryvdh/laravel-debugbar --dev
     <li>Shop</li>
 </ul>
 
+### Migrations
+<ul>
+    <li>Country</li>
+    <li>City</li>
+    <li>Shop</li>
+</ul>
+
 ### Controllers
 <ul>
     <li>CountryController</li>
@@ -88,12 +95,18 @@ composer require barryvdh/laravel-debugbar --dev
     <li>CitySeeder</li>
     <ul>
         <li>✅ name</li>
-        <li>⏳ slug</li>
+        <li>✅ slug</li>
+        <li>✅ country_id</li>
+        <li>⏳ coordinates</li>
+        <li>⏳ coordinatesUrl</li>
     </ul>
     <li>ShopSeeder</li>
     <ul>
         <li>✅ name</li>
-        <li>⏳ slug</li>
+        <li>✅ slug</li>
+        <li>⏳ city_id</li>
+        <li>⏳ coordinates</li>
+        <li>⏳ coordinatesUrl</li>
     </ul>
 </ul>
 

@@ -16,6 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('country_id')->nullable();
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
+            $table->mediumText('address')->nullable();
+            $table->string('coordinates')->nullable();
+            $table->string('coordinatesUrl')->nullable();
             $table->timestamps();
         });
     }

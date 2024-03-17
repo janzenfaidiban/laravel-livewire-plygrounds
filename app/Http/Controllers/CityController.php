@@ -18,4 +18,29 @@ class CityController extends Controller
     {
         return $this->has(Shop::class);
     }
+
+    public function create()
+    {
+        // return view('city.create');
+    }
+
+    public function store(Request $request)
+    {
+        // 
+    }
+
+    public function edit($id)
+    {
+        // return view('city.edit');
+    }
+
+    public function update(Request $request)
+    {
+        // 
+    }
+
+    public function delete($id)
+    {
+        // 
+    }
 }
