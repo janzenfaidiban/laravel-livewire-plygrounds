@@ -9,8 +9,7 @@ class CountryController extends Controller
 {
     public function index()
     {
-        $collection = Country::with('shops', 'cities')->get();
-        return view('country.index', compact('collection'));
+        return view('country.index');
     }
 
     public function show($id)
@@ -26,7 +25,7 @@ class CountryController extends Controller
 
     public function store(Request $request)
     {
-        // 
+        //
     }
 
     public function edit($id)
@@ -36,11 +35,11 @@ class CountryController extends Controller
 
     public function update(Request $request)
     {
-        // 
+        //
     }
 
     public function delete($id)
     {
-        // 
+        //
     }
 }
