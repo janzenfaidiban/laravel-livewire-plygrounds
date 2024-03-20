@@ -26,7 +26,7 @@ class CountryController extends Controller
 
     public function store(Request $request)
     {
-        // 
+        //
     }
 
     public function edit($id)
@@ -36,11 +36,11 @@ class CountryController extends Controller
 
     public function update(Request $request)
     {
-        // 
+        //
     }
 
     public function delete($id)
     {
-        // 
+        //
     }
 }
