@@ -69,18 +69,14 @@ composer require barryvdh/laravel-debugbar --dev
 |   |    ├── 2024_03_17_032420_create_shops_table.php ✅
 │   |    └── ...
 │   ├── seeders
-|   |    ├── CitySeeder.php ✅
 |   |    ├── CountrySeeder.php ✅
+|   |    ├── CitySeeder.php ✅
 |   |    ├── ShopSeeder.php ✅
 |   |    ├── DatabaseSeeder.php ✅
 │   |    └── ...
 ```
 
 ## LARAVEL
-
-## Models
-
-### Migrations
 
 ### Controllers
 
@@ -90,40 +86,36 @@ composer require barryvdh/laravel-debugbar --dev
 ├── app
 |   ├── Http
 |   |   ├── Controllers
-|   |   |   ├── CityController.php⏳ 
 |   |   |   ├── CountryController.php⏳
+|   |   |   ├── CityController.php⏳ 
 |   |   |   ├── ShopController.php⏳
 │   |   |   └── ...
 ```
 
 ### Views
 
-<ul>
-    <li>country</li>
-    <ul>
-        <li>✅ index</li>
-        <li>⏳ show</li>
-        <li>⏳ create</li>
-        <li>⏳ edit</li>
-        <li>⏳ modal > delete</li>
-    </ul>
-    <li>city</li>
-    <ul>
-        <li>✅ index</li>
-        <li>⏳ show</li>
-        <li>⏳ create</li>
-        <li>⏳ edit</li>
-        <li>⏳ modal > delete</li>
-    </ul>
-    <li>shop</li>
-    <ul>
-        <li>✅ index</li>
-        <li>⏳ show</li>
-        <li>⏳ create</li>
-        <li>⏳ edit</li>
-        <li>⏳ modal > delete</li>
-    </ul>
-</ul>
+```
+.
+├── resources
+|   ├── views
+|   |   ├── layouts
+|   |   |   ├── app.blade.php⏳ 
+|   |   ├── country
+|   |   |   ├── index.blade.php⏳ 
+|   |   |   ├── show.blade.php⏳ 
+|   |   |   ├── edit.blade.php⏳ 
+│   |   |   └── ...
+|   |   ├── city
+|   |   |   ├── index.blade.php⏳ 
+|   |   |   ├── show.blade.php⏳ 
+|   |   |   ├── edit.blade.php⏳ 
+│   |   |   └── ...
+|   |   ├── shop
+|   |   |   ├── index.blade.php⏳ 
+|   |   |   ├── show.blade.php⏳ 
+|   |   |   ├── edit.blade.php⏳ 
+│   |   |   └── ...
+```
 
 ## LIVEWIRE
 
