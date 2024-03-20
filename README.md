@@ -40,14 +40,45 @@ composer require barryvdh/laravel-debugbar --dev
 
 # TODOS
 
-## LARAVEL
+## GENERAL
 
 ### Models
-<ul>
-    <li>Country</li>
-    <li>City</li>
-    <li>Shop</li>
-</ul>
+
+
+```
+.
+├── app
+│   ├── Models
+|   |    ├── City.php ✅
+|   |    ├── Country.php ✅
+|   |    ├── Shop.php ✅
+|   |    ├── User.php ✅
+│   |    └── ...
+```
+
+### Migration
+
+
+```
+.
+├── database
+│   ├── migrations
+|   |    ├── 2014_10_12_000000_create_users_table.php ✅
+|   |    ├── 22024_03_17_025921_create_countries_table.php ✅
+|   |    ├── 2024_03_17_031854_create_cities_table.php ✅
+|   |    ├── 2024_03_17_032420_create_shops_table.php ✅
+│   |    └── ...
+│   ├── seeders
+|   |    ├── CitySeeder.php ✅
+|   |    ├── CountrySeeder.php ✅
+|   |    ├── ShopSeeder.php ✅
+|   |    ├── DatabaseSeeder.php ✅
+│   |    └── ...
+```
+
+## LARAVEL
+
+## Models
 
 ### Migrations
 <ul>
