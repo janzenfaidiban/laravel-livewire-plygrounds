@@ -143,11 +143,13 @@ composer require barryvdh/laravel-debugbar --dev
 
 ### app
 
-app/Livewire
+directories
 ```
 .
-├── dir1
-│   ├── file11.ext
+├── app
+│   ├── Livewire
+|       ├── Country
+|       ├── index.php
 │   └── file12.ext
 ├── dir2
 │   ├── file21.ext
