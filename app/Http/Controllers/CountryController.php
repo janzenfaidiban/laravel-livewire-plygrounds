@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use Eelcol\LaravelBootstrapAlerts\Facade\BootstrapAlerts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class CountryController extends Controller
 {
@@ -26,10 +28,31 @@ class CountryController extends Controller
 
     public function store(Request $request)
     {
-        return ([
-            'name' => $request->name,
-            'flag' => $request->flag,
-        ]);
+        $validator = FacadesValidator::make(
+            $request->all(),
+            [
+                'golongandarah' => 'required',
+            ],
+            [
+                'golongandarah.required' => 'Data ini wajib dilengkapi',
+            ]
+        );
+
+
+        if ($validator->fails()) {
+            return redirect()->back()->withInput($request->all())->withErrors($validator);
+        } else {
+            try {
+                $data = new Country();
+                $data->golongandarah = $request->golongandarah;
+                $data->keterangan = $request->keterangan;
+                $data->save();
+
+                return redirect()->route('beranda.masterdata.golongandarah')->with(BootstrapAlerts::addSuccess('Berhasil! Data telah ditambahkan ke database'));
+            } catch (\Throwable $th) {
+                return redirect()->route('beranda.masterdata.golongandarah')->with(BootstrapAlerts::addError('Gagal! Data gagal ditambahkan ke database'));
+            }
+        }
     }
 
     public function edit($id)

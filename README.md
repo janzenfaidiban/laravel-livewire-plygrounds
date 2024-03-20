@@ -248,6 +248,15 @@ Menginstall package laravelcollective/html
 composer require laravelcollective/html
 ```
 
+## Bootstrap Alerts
+
+Menambahkan packaga bootstrap alert
+```
+composer require eelcol/laravel-bootstrap-alerts
+```
+
+Source : https://github.com/eelcol/laravel-bootstrap-alerts
+
 ## Laravel Eloquent: Deeper Relationships with One Query
 
 Tutorial video by Laravel Daily
