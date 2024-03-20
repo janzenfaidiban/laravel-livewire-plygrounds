@@ -11,7 +11,6 @@ Route::controller(CountryController::class)->group(function(){
     Route::get('country/{id}/edit','edit')->name('country.edit');
     Route::delete('country/{id}/delete','delete')->name('country.delete');
     
-    // store
     Route::post('country/store','store')->name('country.store');
     Route::put('country/{id}/update','update')->name('country.update');
     

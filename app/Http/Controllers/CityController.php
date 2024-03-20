@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Shop;
+use Eelcol\LaravelBootstrapAlerts\Facade\BootstrapAlerts;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
@@ -36,7 +37,8 @@ class CityController extends Controller
 
     public function edit($id)
     {
-        return view('city.edit');
+        $item = City::find($id);
+        return view('city.edit', compact('item'));
     }
 
     public function update(Request $request)
@@ -52,6 +54,8 @@ class CityController extends Controller
 
     public function delete($id)
     {
-        // 
+        $item = City::find($id);
+        $item->delete();
+        return redirect()->back()->with(BootstrapAlerts::addError('Deleted! Data has been deleted'));
     }
 }

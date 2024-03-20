@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
+use Eelcol\LaravelBootstrapAlerts\Facade\BootstrapAlerts;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -27,7 +28,8 @@ class ShopController extends Controller
 
     public function edit($id)
     {
-        return view('shop.edit');
+        $item = Shop::find($id);
+        return view('shop.edit', compact('item'));
     }
 
     public function update(Request $request)
@@ -40,6 +42,8 @@ class ShopController extends Controller
 
     public function delete($id)
     {
-        // 
+        $item = Shop::find($id);
+        $item->delete();
+        return redirect()->back()->with(BootstrapAlerts::addError('Deleted! Data has been deleted'));
     }
 }

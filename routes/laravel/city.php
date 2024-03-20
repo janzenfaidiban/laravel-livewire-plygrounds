@@ -10,5 +10,8 @@ Route::controller(CityController::class)->group(function(){
     Route::get('city/{id}/show','show')->name('city.show');
     Route::get('city/{id}/edit','edit')->name('city.edit');
     Route::get('city/{id}/delete','show')->name('city.delete');
+    
+    Route::post('city/store','store')->name('city.store');
+    Route::put('city/{id}/update','update')->name('city.update');
 
 });
