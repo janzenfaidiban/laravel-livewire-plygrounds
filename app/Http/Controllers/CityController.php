@@ -21,22 +21,33 @@ class CityController extends Controller
 
     public function create()
     {
-        // return view('city.create');
+        return view('city.create');
     }
 
     public function store(Request $request)
     {
-        // 
+        return ([
+            'name' => $request->name,
+            'adddress' => $request->adddress,
+            'coordinates' => $request->coordinates,
+            'coordinatesUrl' => $request->coordinatesUrl,
+        ]);
     }
 
     public function edit($id)
     {
-        // return view('city.edit');
+        return view('city.edit');
     }
 
     public function update(Request $request)
     {
-        // 
+        return ([
+            'id' => $request->id,
+            'name' => $request->name,
+            'adddress' => $request->adddress,
+            'coordinates' => $request->coordinates,
+            'coordinatesUrl' => $request->coordinatesUrl,
+        ]);
     }
 
     public function delete($id)

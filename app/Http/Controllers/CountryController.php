@@ -21,22 +21,29 @@ class CountryController extends Controller
 
     public function create()
     {
-        // return view('country.create');
+        return view('country.create');
     }
 
     public function store(Request $request)
     {
-        //
+        return ([
+            'name' => $request->name,
+            'flag' => $request->flag,
+        ]);
     }
 
     public function edit($id)
     {
-        // return view('country.edit');
+        return view('country.edit');
     }
 
     public function update(Request $request)
     {
-        //
+        return ([
+            'id' => $request->id,
+            'name' => $request->name,
+            'flag' => $request->flag,
+        ]);
     }
 
     public function delete($id)

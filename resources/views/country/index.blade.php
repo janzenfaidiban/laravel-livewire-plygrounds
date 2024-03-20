@@ -3,8 +3,10 @@
 
     <div class="card mb-4">
         <div class="card-header">
-            <h1 class="h3">Countries</h1>
             <div class="row">
+                <div class="col">
+                    <h1 class="h3">Countries</h1>
+                </div>
                 <div class="col">
                     Total : {{  $collection->count() }}
                 </div>

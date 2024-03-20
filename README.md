@@ -237,6 +237,17 @@ git push --set-upstream origin <branch-name>
 
 Videos, articles, and urls from any other platforms you can mention bellow here.
 
+## Laravel Collective
+
+Tutorial menggunakan Laravel Collective untuk menerapkan Form & HTML
+
+Source : https://laravelcollective.com/docs/6.x/html
+
+Menginstall package laravelcollective/html
+```
+composer require laravelcollective/html
+```
+
 ## Laravel Eloquent: Deeper Relationships with One Query
 
 Tutorial video by Laravel Daily

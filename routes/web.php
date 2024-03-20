@@ -10,4 +10,4 @@ Route::get('/', function () {
 });
 
 // Laravel Routes
-require_once('laravel/index.php');
+require_once('laravel.php');
