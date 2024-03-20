@@ -140,8 +140,8 @@ Apabila terjadi error pada saat menjalankan ```npm run dev```, bisa dikarenakan 
 <ul>
     <li>sistem operasi yang digunakan oleh para developer berbeda, sehingga packages yang terinstal juga berbeda. Yang perlu dilakukan adalah menghapus folder <b>node_modules</b> dan file <b>package-lock.json</b>.</li>
     <li>Jalankan kembali perintah <code>npm install</code> </li>
-    <li>Jalankan juga perintah ```php artisan optimize:clear```</li>
-    <li>Setelah itu coba lagi jalankan ```npm run dev``` </li>
+    <li>Jalankan juga perintah <code>php artisan optimize:clear</code></li>
+    <li>Setelah itu coba lagi jalankan <code>npm run dev</code> </li>
 </ul>
 
 ### Directories
