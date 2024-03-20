@@ -28,6 +28,28 @@ class Index extends Component
         $country->save();
     }
 
+    public function create(): void
+    {
+        $slug = Str::slug($this->name, '-');
+        Country::query()->create([
+            'name' => $this->name,
+            'slug' => $slug,
+            'flag' => $this->flag
+        ]);
+    }
+
+    public function delete($id): void
+    {
+        $country = Country::query()->find($id);
+        $country->delete();
+    }
+
+    public function clear(): void
+    {
+        $this->name = '';
+        $this->flag = '';
+    }
+
     public function render()
     {
         $this->collection = Country::with('shops', 'cities')->get();

@@ -9,7 +9,8 @@ class CountryController extends Controller
 {
     public function index()
     {
-        return view('country.index');
+        $collection = Country::with('shops', 'cities')->get();
+        return view('country.index', compact('collection'));
     }
 
     public function show($id)
