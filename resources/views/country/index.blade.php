@@ -41,7 +41,7 @@
                         <td>{{ $item->updated_at }}</td>
                         <td>{{ $item->created_at }}</td>
                         <td class="d-flex gap-2">
-                            <a href="{{ route('country.show', $item->id) }}" class="btn btn-sm btn-outline-dark">show</a>
+                            <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showModal" role="button">show</a>
                             <a href="{{ route('country.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
                             <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal" role="button">delete</a>
                         </td>
@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal Delete -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
@@ -69,6 +69,38 @@
                 @csrf @method('DELETE') 
                 {!! Form::submit('yes, delete!', array('class' => 'btn btn-sm btn-outline-danger' )) !!}
             {!! Form::close() !!}
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Show -->
+    <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="showModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="showModalLabel">Show</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <tr>
+                        <td>Flag</td>
+                        <td><img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="54px"></td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td class="fw-bold">{{ $item->name ?? '' }}</td>
+                    </tr>
+                    <tr>
+                        <td>Created at</td>
+                        <td>{{ $item->created_at }}</td>
+                    </tr>
+                    <tr>
+                        <td>Updated at</td>
+                        <td>{{ $item->updated_at }}</td>
+                    </tr>
+                </table>
             </div>
         </div>
         </div>

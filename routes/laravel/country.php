@@ -13,5 +13,6 @@ Route::controller(CountryController::class)->group(function(){
     
     // store
     Route::post('country/store','store')->name('country.store');
+    Route::put('country/{id}/update','update')->name('country.update');
     
 });

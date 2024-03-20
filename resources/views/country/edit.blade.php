@@ -7,7 +7,7 @@
     <div class="card-header">
         <div class="row">
             <div class="col">
-                <h1 class="h3">Create Country</h1>
+                <h1 class="h3">Edit Country</h1>
             </div>
             <div class="col text-end">
                 <a href="{{ route('country') }}" class="btn btn-sm btn-dark">Back</a>
@@ -18,31 +18,34 @@
 
         {!! display_bootstrap_alerts() !!}
         
-        {!! Form::open(['route' => 'country.store', 'method' => 'post']) !!}
+        {!! Form::open(['route' => ['country.update', $item->id], 'method' => 'post']) !!}
+        @csrf @method('PUT')
 
             <div class="form-group mb-3">
                 {!! Form::label('name', 'Name', array('class' => 'form-label'))  !!}
-                {!! Form::text('name', old('name' ?? ''), 
+                {!! Form::text('name', $item->name ?? old('name'), 
                           array(
                             'class' => 'form-control', 
                             'placeholder' => 'country name'
                         )) 
                 !!}
                 <small class="text-muted fst-italic">
-                    <code>United States</code>
+                    <small class="d-block">Example for testing:</small>
+                    <code class="text-secondary">United States</code>
                 </small>
             </div> <!-- form-group end -->
 
             <div class="form-group mb-3">
                 {!! Form::label('flag', 'Flag Url', array('class' => 'form-label'))  !!}
-                {!! Form::text('flag', old('name' ?? ''), 
+                {!! Form::text('flag',  $item->flag ?? old('flag'), 
                           array(
                             'class' => 'form-control', 
                             'placeholder' => 'country flag url'
                         )) 
                 !!}
                 <small class="text-muted fst-italic">
-                    <code>https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg</code>
+                    <small class="d-block">Example for testing:</small>
+                    <code class="text-secondary">https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg</code>
                 </small>
             </div> <!-- form-group end -->
 
