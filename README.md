@@ -42,9 +42,9 @@ composer require barryvdh/laravel-debugbar --dev
 
 ## GENERAL
 
-### Models
+### 📁 Models
 
-Model untuk mengolah fungsi data para project laravel
+Model untuk mengolah fungsi data pada project laravel
 
 ```
 .
@@ -57,7 +57,7 @@ Model untuk mengolah fungsi data para project laravel
 │   |    └── ...
 ```
 
-### Migration
+### 📁 Migration
 
 File migrasi untuk membuat table pada database
 
@@ -80,7 +80,7 @@ File migrasi untuk membuat table pada database
 
 ## LARAVEL
 
-### Controllers
+### 📁 Controllers
 
 File controller untuk project laravel
 
@@ -95,7 +95,7 @@ File controller untuk project laravel
 │   |   |   └── ...
 ```
 
-### Views
+### 📁 Views
 
 Halaman blade untuk project laravel
 
@@ -122,6 +122,21 @@ Halaman blade untuk project laravel
 │   |   |   └── ...
 ```
 
+### 📁 Routes
+
+File & folder routes untuk project laravel
+
+```
+.
+├── routes
+|   ├── web.php
+|   ├── laravel
+|   |   ├── country.php
+|   |   ├── city.php
+|   |   ├── shop.php
+│   |   └── ...
+```
+
 ## LIVEWIRE
 
 ### Installation
@@ -144,7 +159,7 @@ Apabila terjadi error pada saat menjalankan ```npm run dev```, bisa dikarenakan 
     <li>Setelah itu coba lagi jalankan <code>npm run dev</code> </li>
 </ul>
 
-### Directories
+### 📁 Directories
 
 Folder dan file yang digunakan untuk project livewire
 
@@ -181,9 +196,7 @@ Folder dan file yang digunakan untuk project livewire
 └── README.md
 ```
 
-### routes
-
-# Learning Sources
+# 📚 LEARNING RESOURCES
 
 Vieos, articles, and urls from any other platforms you can mention bellow here.
 
