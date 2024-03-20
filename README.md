@@ -148,12 +148,15 @@ directories
 .
 ├── app
 │   ├── Livewire
-|       ├── Country ✅
-|           ├── index.php ⌛
-|       ├── City ⌛
-|           ├── index.php ⌛
-|       ├── Shop ⌛
-|           ├── index.php ⌛
+|   |    ├── Country ✅
+|   |    |   ├── index.php ⌛
+│   |    |   └── ...
+|   |    ├── City ⌛
+|   |    |   ├── index.php ⌛
+│   |    |   └── ...
+|   |    ├── Shop ⌛
+|   |    |   ├── index.php ⌛
+│   |    |   └── ...
 │   └── ...
 ├── ...
 │   ├── ...
