@@ -141,9 +141,8 @@ composer require barryvdh/laravel-debugbar --dev
 
 ## LIVEWIRE
 
-### app
+### Directories
 
-directories
 ```
 .
 ├── app
@@ -168,8 +167,8 @@ directories
 |   |   |   ├── country
 |   |   |   |   ├── index.blade.php ⌛
 │   └── ...
-├── ...
-├── ...
+├── routes
+|   ├── livewire.php ✅
 └── README.md
 ```
 
