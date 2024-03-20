@@ -81,65 +81,20 @@ composer require barryvdh/laravel-debugbar --dev
 ## Models
 
 ### Migrations
-<ul>
-    <li>Country</li>
-    <li>City</li>
-    <li>Shop</li>
-</ul>
 
 ### Controllers
-<ul>
-    <li>CountryController</li>
-    <ul>
-        <li>✅ index</li>
-        <li>⏳ show</li>
-        <li>⏳ create</li>
-        <li>⏳ edit</li>
-        <li>⏳ delete</li>
-    </ul>
-    <li>CityController</li>
-    <ul>
-        <li>✅ index</li>
-        <li>⏳ show</li>
-        <li>⏳ create</li>
-        <li>⏳ edit</li>
-        <li>⏳ delete</li>
-    </ul>
-    <li>ShopController</li>
-    <ul>
-        <li>✅ index</li>
-        <li>⏳ show</li>
-        <li>⏳ create</li>
-        <li>⏳ edit</li>
-        <li>⏳ delete</li>
-    </ul>
-</ul>
 
-### Seeders
-<ul>
-    <li>CountrySeeder</li>
-    <ul>
-        <li>✅ name</li>
-        <li>✅ slug</li>
-        <li>✅ flag</li>
-    </ul>
-    <li>CitySeeder</li>
-    <ul>
-        <li>✅ name</li>
-        <li>✅ slug</li>
-        <li>✅ country_id</li>
-        <li>⏳ coordinates</li>
-        <li>⏳ coordinatesUrl</li>
-    </ul>
-    <li>ShopSeeder</li>
-    <ul>
-        <li>✅ name</li>
-        <li>✅ slug</li>
-        <li>⏳ city_id</li>
-        <li>⏳ coordinates</li>
-        <li>⏳ coordinatesUrl</li>
-    </ul>
-</ul>
+
+```
+.
+├── app
+|   ├── Http
+|   |   ├── Controllers
+|   |   |   ├── CityController.php⏳ 
+|   |   |   ├── CountryController.php⏳
+|   |   |   ├── ShopController.php⏳
+│   |   |   └── ...
+```
 
 ### Views
 
