@@ -4,7 +4,7 @@
 
 <img src="public/images/country.png">
 
-## Installation
+## 📙 Installation
 
 ### Download project
 ```
@@ -38,9 +38,9 @@ Installation using composer
 composer require barryvdh/laravel-debugbar --dev
 ```
 
-# TODOS
+# 🎯 TODOS
 
-## GENERAL
+## ⭐ GENERAL
 
 ### 📁 Models
 
@@ -78,7 +78,7 @@ File migrasi untuk membuat table pada database
 │   |    └── ...
 ```
 
-## LARAVEL
+## ⭐ LARAVEL
 
 ### 📁 Controllers
 
@@ -137,9 +137,9 @@ File & folder routes untuk project laravel
 │   |   └── ...
 ```
 
-## LIVEWIRE
+## ⭐ LIVEWIRE
 
-### Installation
+### 📙 Installation
 
 Menginstall NPM packages
 ```
