@@ -207,9 +207,35 @@ Folder dan file yang digunakan untuk project livewire
 └── README.md
 ```
 
+# 📚 GIT COMMANDS
+
+Membuat branch baru di local
+```
+git checkout -m <branch-name>
+```
+atau
+```
+git switch -c <branch-name>
+```
+
+Verifikasi branch yang sudah dibuat dan branch yang ada di remote
+```
+git branch -a
+```
+
+Push branch baru dari local ke remote
+```
+git push origin <branch-name>
+```
+atau
+```
+git push --set-upstream origin <branch-name>
+```
+
+
 # 📚 LEARNING RESOURCES
 
-Vieos, articles, and urls from any other platforms you can mention bellow here.
+Videos, articles, and urls from any other platforms you can mention bellow here.
 
 ## Laravel Eloquent: Deeper Relationships with One Query
 
