@@ -164,7 +164,11 @@ composer require barryvdh/laravel-debugbar --dev
 |   |   |   |   ├── app.blade.php ⌛
 |   |   |   ├── modalAlpine.blade.php ⌛
 │   |   ├── livewire
-|   |   |   ├── country
+|   |   |   ├── country ✅
+|   |   |   |   ├── index.blade.php ⌛
+|   |   |   ├── city ⌛
+|   |   |   |   ├── index.blade.php ⌛
+|   |   |   ├── shop ⌛
 |   |   |   |   ├── index.blade.php ⌛
 │   └── ...
 ├── routes
