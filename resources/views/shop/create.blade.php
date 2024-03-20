@@ -23,10 +23,11 @@
             <div class="form-group mb-3">
                 {!! Form::label('name', 'Name', array('class' => 'form-label'))  !!}
                 {!! Form::text('name', old('name' ?? ''), 
-                          array(
+                        [
                             'class' => 'form-control', 
                             'placeholder' => 'shop name'
-                        )) 
+                        ]
+                    ) 
                 !!}
                 <small class="text-muted fst-italic">
                     <code>Papua Mart</code>

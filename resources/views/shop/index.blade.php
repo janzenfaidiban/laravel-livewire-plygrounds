@@ -19,6 +19,8 @@
     </div>
     <div class="card-body">
 
+        {!! display_bootstrap_alerts() !!}
+
         <table class="table">
             <thead>
                 <tr>
@@ -37,19 +39,20 @@
                     <td>🏙️ {{ $item->city->name }}</td>
                     <td><img src="{{ $item->city->country->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->city->country->name }}</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showModal" role="button">show</a>
+                        <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showModal{{$item->id}}" role="button">show</a>
                         <a href="{{ route('shop.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
-                        <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal" role="button">delete</a>
+                        <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button">delete</a>
                     </td>
                 </tr>
+
+                @include('shop.modals.delete')
+                @include('shop.modals.show')
+                
                 @endforeach
             </tbody>
         </table>
 
     </div>
 </div>
-
-@include('shop.modals.delete')
-@include('shop.modals.show')
 
 @stop

@@ -24,24 +24,25 @@
             <div class="form-group mb-3">
                 {!! Form::label('name', 'Name', array('class' => 'form-label'))  !!}
                 {!! Form::text('name', $item->name ?? old('name'), 
-                          array(
+                        [
                             'class' => 'form-control', 
                             'placeholder' => 'country name'
-                        )) 
+                        ]
+                    ) 
                 !!}
                 <small class="text-muted fst-italic">
-                    <small class="d-block">Example for testing:</small>
-                    <code class="text-secondary">United States</code>
+                    <code>United States</code>
                 </small>
             </div> <!-- form-group end -->
 
             <div class="form-group mb-3">
                 {!! Form::label('flag', 'Flag Url', array('class' => 'form-label'))  !!}
                 {!! Form::text('flag',  $item->flag ?? old('flag'), 
-                          array(
+                        [
                             'class' => 'form-control', 
                             'placeholder' => 'country flag url'
-                        )) 
+                        ]
+                    ) 
                 !!}
                 <small class="text-muted fst-italic">
                     <small class="d-block">Example for testing:</small>

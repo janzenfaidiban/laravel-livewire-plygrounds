@@ -41,18 +41,19 @@
                         <td>{{ $item->updated_at }}</td>
                         <td>{{ $item->created_at }}</td>
                         <td class="d-flex gap-2">
-                            <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showModal" role="button">show</a>
+                            <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showModal{{$item->id}}" role="button">show</a>
                             <a href="{{ route('country.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
-                            <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal" role="button">delete</a>
+                            <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button">delete</a>
                         </td>
                     </tr>
+
+                    @include('country.modals.delete')
+                    @include('country.modals.show')
+
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-
-    @include('country.modals.delete')
-    @include('country.modals.show')
 
 @stop

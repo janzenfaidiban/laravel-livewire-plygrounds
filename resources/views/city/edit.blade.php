@@ -22,16 +22,55 @@
         @csrf @method('PUT')
 
             <div class="form-group mb-3">
+                {!! Form::label('name', 'Country', array('class' => 'form-label'))  !!}
+                {!! Form::select('country_id', App\Models\Country::orderBy('name')->pluck('name', 'id'), $item->country_id, 
+                        [
+                            'class' => 'form-control', 
+                            'placeholder' => 'Select a country'
+                        ]
+                    ) 
+                !!}
+
+            </div> <!-- form-group end -->
+
+            <div class="form-group mb-3">
                 {!! Form::label('name', 'Name', array('class' => 'form-label'))  !!}
                 {!! Form::text('name', $item->name ?? old('name'), 
-                          array(
+                        [
                             'class' => 'form-control', 
                             'placeholder' => 'city name'
-                        )) 
+                        ]
+                    ) 
                 !!}
                 <small class="text-muted fst-italic">
                     <small class="d-block">Example for testing:</small>
                     <code class="text-secondary">Hollandia</code>
+                </small>
+            </div> <!-- form-group end -->
+
+            <div class="form-group mb-3">
+                {!! Form::label('coordinates', 'Coordinates', array('class' => 'form-label'))  !!}
+                {!! Form::text('coordinates', $item->coordinates ?? old('coordinates'), 
+                          [
+                            'class' => 'form-control', 
+                            'placeholder' => 'city coordinates'
+                          ]) 
+                !!}
+                <small class="text-muted fst-italic">
+                    <code>-9.513,147.211</code>
+                </small>
+            </div> <!-- form-group end -->
+
+            <div class="form-group mb-3">
+                {!! Form::label('coordinatesUrl', 'Coordinates Url', array('class' => 'form-label'))  !!}
+                {!! Form::text('coordinatesUrl', $item->coordinatesUrl ?? old('coordinatesUrl'), 
+                          [
+                            'class' => 'form-control', 
+                            'placeholder' => 'city coordinatesUrl'
+                          ]) 
+                !!}
+                <small class="text-muted fst-italic">
+                    <code>https://www.openstreetmap.org/node/7992304469#map=15/-8.7734/160.7001</code>
                 </small>
             </div> <!-- form-group end -->
 
