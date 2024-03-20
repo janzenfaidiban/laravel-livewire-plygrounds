@@ -17,6 +17,8 @@
         </div>
         <div class="card-body">
 
+            {!! display_bootstrap_alerts() !!}
+
             <table class="table">
                 <thead>
                 <tr>
@@ -30,7 +32,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($collection as $item)
+                    @foreach ($collection as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
                         <td><img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}</td>
@@ -38,15 +40,37 @@
                         <td>{{ $item->shops->count() }}</td>
                         <td>{{ $item->updated_at }}</td>
                         <td>{{ $item->created_at }}</td>
-                        <td>
+                        <td class="d-flex gap-2">
                             <a href="{{ route('country.show', $item->id) }}" class="btn btn-sm btn-outline-dark">show</a>
                             <a href="{{ route('country.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
-                            <a href="{{ route('country.delete', $item->id) }}" class="btn btn-sm btn-outline-dark">delete</a>
+                            <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal" role="button">delete</a>
                         </td>
                     </tr>
-                @endforeach
+                    @endforeach
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="deleteModalLabel">Are you sure?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">no, don't do it</button>
+            {!! Form::open(['route' => ['country.delete', $item->id]]) !!} 
+                @csrf @method('DELETE') 
+                {!! Form::submit('yes, delete!', array('class' => 'btn btn-sm btn-outline-danger' )) !!}
+            {!! Form::close() !!}
+            </div>
+        </div>
         </div>
     </div>
 

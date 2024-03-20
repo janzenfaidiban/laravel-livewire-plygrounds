@@ -16,6 +16,8 @@
     </div>
     <div class="card-body">
 
+        {!! display_bootstrap_alerts() !!}
+
         {!! Form::open(['route' => 'country.store', 'method' => 'post']) !!}
 
             <div class="form-group mb-3">
@@ -27,7 +29,7 @@
                         )) 
                 !!}
                 <small class="text-muted fst-italic">
-                    Example : <code>United States</code>
+                    <code>United States</code>
                 </small>
             </div> <!-- form-group end -->
 
@@ -40,7 +42,7 @@
                         )) 
                 !!}
                 <small class="text-muted fst-italic">
-                    Example : <code>https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg</code>
+                    <code>https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg</code>
                 </small>
             </div> <!-- form-group end -->
 

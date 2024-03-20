@@ -31,10 +31,10 @@ class CountryController extends Controller
         $validator = FacadesValidator::make(
             $request->all(),
             [
-                'golongandarah' => 'required',
+                'name' => 'required',
             ],
             [
-                'golongandarah.required' => 'Data ini wajib dilengkapi',
+                'name.required' => 'This is a required field',
             ]
         );
 
@@ -44,13 +44,16 @@ class CountryController extends Controller
         } else {
             try {
                 $data = new Country();
-                $data->golongandarah = $request->golongandarah;
-                $data->keterangan = $request->keterangan;
+                $data->name = $request->name;
+                $data->flag = $request->flag;
                 $data->save();
 
-                return redirect()->route('beranda.masterdata.golongandarah')->with(BootstrapAlerts::addSuccess('Berhasil! Data telah ditambahkan ke database'));
+                // dd('sucess');
+
+                return redirect()->route('country')->with(BootstrapAlerts::addSuccess('Success! Data has been created'));
+
             } catch (\Throwable $th) {
-                return redirect()->route('beranda.masterdata.golongandarah')->with(BootstrapAlerts::addError('Gagal! Data gagal ditambahkan ke database'));
+                return redirect()->back()->with(BootstrapAlerts::addError('Failed! Data can not be created'));
             }
         }
     }
@@ -71,6 +74,8 @@ class CountryController extends Controller
 
     public function delete($id)
     {
-        //
+        $data = Country::find($id);
+        $data->delete();
+        return redirect()->back()->with(BootstrapAlerts::addError('Deleted! Data has been deleted'));
     }
 }
