@@ -149,7 +149,7 @@ directories
 ├── app
 │   ├── Livewire
 |       ├── Country
-|       ├── index.php
+|           ├── index.php
 │   └── file12.ext
 ├── dir2
 │   ├── file21.ext
