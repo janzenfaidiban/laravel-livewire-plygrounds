@@ -136,9 +136,9 @@ Menjalankan development project
 npm run dev
 ```
 
-Apabila terjadi error san menjalankan ```npm run dev```, bisa dikarenakan oleh beberapa hal berikut : 
+Apabila terjadi error pada saat menjalankan ```npm run dev```, bisa dikarenakan oleh beberapa hal berikut : 
 <ul>
-    <li>sistem operasi yang digunakan oleh para developer berbeda, sehingga packages yang terinstal juga berbeda. Yang perlu dilakukan adalah menghapus folder <b>node_modules</b> dan file <b>package-lock.json</b>.<li>
+    <li>sistem operasi yang digunakan oleh para developer berbeda, sehingga packages yang terinstal juga berbeda. Yang perlu dilakukan adalah menghapus folder <b>node_modules</b> dan file <b>package-lock.json</b>.</li>
     <li>Jalankan kembali perintah ```npm install```</li>
     <li>Jalankan juga perintah ```php artisan optimize:clear```</li>
     <li>Setelah itu coba lagi jalankan ```npm run dev``` </li>
