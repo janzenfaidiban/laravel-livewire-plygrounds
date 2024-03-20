@@ -1,10 +1,21 @@
 # Laravel Playground
 
 ## Project Overview
+Project ini dibuat untuk mempelajari dan mendalami pengembangan aplikasi web menggunakan dengan konsep TALLSTACK.
+Dalam satu repository ini terdapat 2 pola pengembangan, yaitu : 
+<ul>
+    <li>Pengembangan menggunakan Laravel (Laravel, Bootstrap 5.3)</li>
+    <li>Pengembangan menggunakan TALLSTACK (Tailwind, Alpine.js, Laravel dan Livewire)</li>
+</ul>
 
+## Project Screenshots
+
+Tampilan halaman Country
 <img src="public/images/country.png">
 
 ## 📙 Installation
+
+Cara mendownload project melalui GitHub ke local repository.
 
 ### Download project
 ```
@@ -40,7 +51,7 @@ composer require barryvdh/laravel-debugbar --dev
 
 # 🎯 TODOS
 
-## ⭐ GENERAL
+Daftar setiap tugas yang harus dilakukan dan informasi folder / file yang perlu diakses oleh para pengembang.
 
 ### 📁 Models
 
