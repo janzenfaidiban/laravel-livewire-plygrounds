@@ -35,7 +35,7 @@
                     @foreach ($collection as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td><img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}</td>
+                        <td><img src="@empty($item->flag) https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/800px-Flag_of_Indonesia.svg.png @else {{ $item->flag }} @endempty" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}</td>
                         <td>{{ $item->cities->count() }}</td>
                         <td>{{ $item->shops->count() }}</td>
                         <td>{{ $item->updated_at }}</td>
@@ -86,7 +86,7 @@
                 <table class="table">
                     <tr>
                         <td>Flag</td>
-                        <td><img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="54px"></td>
+                        <td><img src="@empty($item->flag) https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/800px-Flag_of_Indonesia.svg.png @else {{ $item->flag }} @endempty" alt="flag picture" class="img-fluid" width="54px"></td>
                     </tr>
                     <tr>
                         <td>Name</td>

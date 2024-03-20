@@ -34,7 +34,7 @@ class CountryController extends Controller
                 'name' => 'required',
             ],
             [
-                'name.required' => 'This is a required field',
+                'name.required' => 'Name is a required field',
             ]
         );
 
@@ -72,7 +72,7 @@ class CountryController extends Controller
                 'name' => 'required',
             ],
             [
-                'name.required' => 'This is a required field',
+                'name.required' => 'Name is a required field',
             ]
         );
 
