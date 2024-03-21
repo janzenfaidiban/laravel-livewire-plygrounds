@@ -6,10 +6,8 @@ use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect('country');
+    return redirect('laravel/country');
 });
 
 // Laravel Routes
-require_once('laravel/country.php');
-require_once('laravel/city.php');
-require_once('laravel/shop.php');
+require_once('laravel.php');

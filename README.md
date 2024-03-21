@@ -115,21 +115,24 @@ Halaman blade untuk project laravel
 ├── resources
 |   ├── views
 |   |   ├── layouts
-|   |   |   ├── app.blade.php⏳ 
+|   |   |   ├── app.blade.php ✅ 
 |   |   ├── country
-|   |   |   ├── index.blade.php⏳ 
-|   |   |   ├── show.blade.php⏳ 
-|   |   |   ├── edit.blade.php⏳ 
+|   |   |   ├── index.blade.php✅ 
+|   |   |   ├── show.blade.php✅ 
+|   |   |   ├── create.blade.php✅ 
+|   |   |   ├── edit.blade.php✅
 │   |   |   └── ...
 |   |   ├── city
-|   |   |   ├── index.blade.php⏳ 
-|   |   |   ├── show.blade.php⏳ 
-|   |   |   ├── edit.blade.php⏳ 
+|   |   |   ├── index.blade.php ✅ 
+|   |   |   ├── create.blade.php ✅ 
+|   |   |   ├── show.blade.php ✅ 
+|   |   |   ├── edit.blade.php ✅ 
 │   |   |   └── ...
 |   |   ├── shop
-|   |   |   ├── index.blade.php⏳ 
-|   |   |   ├── show.blade.php⏳ 
-|   |   |   ├── edit.blade.php⏳ 
+|   |   |   ├── index.blade.php ✅ 
+|   |   |   ├── create.blade.php ✅ 
+|   |   |   ├── show.blade.php ✅ 
+|   |   |   ├── edit.blade.php ✅ 
 │   |   |   └── ...
 ```
 
@@ -141,10 +144,11 @@ File & folder routes untuk project laravel
 .
 ├── routes
 |   ├── web.php
+|   ├── laravel.php ✅
 |   ├── laravel
-|   |   ├── country.php
-|   |   ├── city.php
-|   |   ├── shop.php
+|   |   ├── country.php ✅
+|   |   ├── city.php ✅
+|   |   ├── shop.php ✅
 │   |   └── ...
 ```
 
@@ -207,9 +211,55 @@ Folder dan file yang digunakan untuk project livewire
 └── README.md
 ```
 
+# 📚 GIT COMMANDS
+
+Membuat branch baru di local
+```
+git checkout -m <branch-name>
+```
+atau
+```
+git switch -c <branch-name>
+```
+
+Verifikasi branch yang sudah dibuat dan branch yang ada di remote
+```
+git branch -a
+```
+
+Push branch baru dari local ke remote
+```
+git push origin <branch-name>
+```
+atau
+```
+git push --set-upstream origin <branch-name>
+```
+
+
 # 📚 LEARNING RESOURCES
 
-Vieos, articles, and urls from any other platforms you can mention bellow here.
+Videos, articles, and urls from any other platforms you can mention bellow here.
+
+## Laravel Collective
+
+Tutorial menggunakan Laravel Collective untuk menerapkan Form & HTML
+
+Source : https://laravelcollective.com/docs/6.x/html
+
+Menginstall package laravelcollective/html
+```
+composer require laravelcollective/html
+```
+
+## Bootstrap Alerts
+
+Menambahkan packaga bootstrap alert
+```
+composer require eelcol/laravel-bootstrap-alerts
+```
+
+Source : https://github.com/eelcol/laravel-bootstrap-alerts
 
 ## Laravel Eloquent: Deeper Relationships with One Query
 
