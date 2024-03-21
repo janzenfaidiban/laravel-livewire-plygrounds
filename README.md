@@ -115,21 +115,24 @@ Halaman blade untuk project laravel
 ├── resources
 |   ├── views
 |   |   ├── layouts
-|   |   |   ├── app.blade.php⏳ 
+|   |   |   ├── app.blade.php ✅ 
 |   |   ├── country
-|   |   |   ├── index.blade.php⏳ 
-|   |   |   ├── show.blade.php⏳ 
-|   |   |   ├── edit.blade.php⏳ 
+|   |   |   ├── index.blade.php✅ 
+|   |   |   ├── show.blade.php✅ 
+|   |   |   ├── create.blade.php✅ 
+|   |   |   ├── edit.blade.php✅
 │   |   |   └── ...
 |   |   ├── city
-|   |   |   ├── index.blade.php⏳ 
-|   |   |   ├── show.blade.php⏳ 
-|   |   |   ├── edit.blade.php⏳ 
+|   |   |   ├── index.blade.php ✅ 
+|   |   |   ├── create.blade.php ✅ 
+|   |   |   ├── show.blade.php ✅ 
+|   |   |   ├── edit.blade.php ✅ 
 │   |   |   └── ...
 |   |   ├── shop
-|   |   |   ├── index.blade.php⏳ 
-|   |   |   ├── show.blade.php⏳ 
-|   |   |   ├── edit.blade.php⏳ 
+|   |   |   ├── index.blade.php ✅ 
+|   |   |   ├── create.blade.php ✅ 
+|   |   |   ├── show.blade.php ✅ 
+|   |   |   ├── edit.blade.php ✅ 
 │   |   |   └── ...
 ```
 
@@ -141,10 +144,11 @@ File & folder routes untuk project laravel
 .
 ├── routes
 |   ├── web.php
+|   ├── laravel.php ✅
 |   ├── laravel
-|   |   ├── country.php
-|   |   ├── city.php
-|   |   ├── shop.php
+|   |   ├── country.php ✅
+|   |   ├── city.php ✅
+|   |   ├── shop.php ✅
 │   |   └── ...
 ```
 
