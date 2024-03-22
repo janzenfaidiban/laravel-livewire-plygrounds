@@ -31,56 +31,62 @@
                 <x-alert message="{{ session('alert-message')['message'] }}" class="{{$class}}" />
             @endif
 
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>no</th>
-                    <th>name</th>
-                    <th>cities</th>
-                    <th>shops</th>
-                    <th>updated_at</th>
-                    <th>created_at</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach ($collection as $item)
-                    <tr>
-                        <td>{{ $item->id }}</td>
-                        <td>
-                            <div class="flex gap-2">
-                                <img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}
-                            </div>
-                        </td>
-                        <td>{{ $item->cities->count() }}</td>
-                        <td>{{ $item->shops->count() }}</td>
-                        <td>{{ $item->updated_at }}</td>
-                        <td>{{ $item->created_at }}</td>
-                        <td>
-                            <button
-                                @click="openModalView = true"
-                                wire:click="dispatch('modal', { data:{{json_encode($item)}} })" class="btn btn-sm btn-outline-dark"
-                            >
-                                show
-                            </button>
-                            <button
-                                wire:click="dispatch('action', { value: {{json_encode(true)}}, type: 'Edit', data:{{json_encode($item)}} })"
-                                class="btn btn-sm btn-outline-dark"
-                            >
-                                edit
-                            </button>
-                            <button
-                                class="btn btn-sm btn-outline-dark"
-                                @click="openModalDelete = true"
-                                wire:click="dispatch('modal', { data:{{json_encode($item)}} })"
-                            >
-                                delete
-                            </button>
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+                @if($collection->count() > 0)
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>no</th>
+                                <th>name</th>
+                                <th>cities</th>
+                                <th>shops</th>
+                                <th>updated_at</th>
+                                <th>created_at</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($collection as $item)
+                                <tr>
+                                    <td>{{ $item->id }}</td>
+                                    <td>
+                                        <div class="flex gap-2">
+                                            <img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}
+                                        </div>
+                                    </td>
+                                    <td>{{ $item->cities->count() }}</td>
+                                    <td>{{ $item->shops->count() }}</td>
+                                    <td>{{ $item->updated_at }}</td>
+                                    <td>{{ $item->created_at }}</td>
+                                    <td>
+                                        <button
+                                            @click="openModalView = true"
+                                            wire:click="dispatch('modal', { data:{{json_encode($item)}} })" class="btn btn-sm btn-outline-dark"
+                                        >
+                                            show
+                                        </button>
+                                        <button
+                                            wire:click="dispatch('action', { value: {{json_encode(true)}}, type: 'Edit', data:{{json_encode($item)}} })"
+                                            class="btn btn-sm btn-outline-dark"
+                                        >
+                                            edit
+                                        </button>
+                                        <button
+                                            class="btn btn-sm btn-outline-dark"
+                                            @click="openModalDelete = true"
+                                            wire:click="dispatch('modal', { data:{{json_encode($item)}} })"
+                                        >
+                                            delete
+                                        </button>
+                                    </td>
+                                </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                @else
+                    <div class="flex justify-center">
+                        <img class="w-56" src="{{asset('assets/undraw_no_data.svg')}}" alt="">
+                    </div>
+                @endif
         </div>
 
         <!-- Modal View -->
