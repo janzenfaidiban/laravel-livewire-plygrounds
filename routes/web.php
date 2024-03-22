@@ -6,7 +6,8 @@ use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect('laravel/country');
+    // return redirect('laravel/country');
+    return view('welcome');
 });
 
 // Laravel Routes
