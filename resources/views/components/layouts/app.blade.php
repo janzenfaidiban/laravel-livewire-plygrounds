@@ -8,7 +8,7 @@
         @vite('resources/css/app.css')
     </head>
     <body>
-        <nav class="container">
+        <nav class="container lg:max-w-[1320px]">
             <div class="row">
                 <div class="col p-5">
                     <a href="{{ route('livewire.country') }}" class="btn @if(Request::segment(2) == 'country') btn-dark @else btn-outline-dark @endif">🗺️ Country </a>
@@ -19,7 +19,7 @@
         </nav>
 
         <main>
-            <div class="container">
+            <div class="container lg:max-w-[1320px]">
                 <div class="row">
                     <div class="col p-5">
 
