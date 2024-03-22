@@ -8,6 +8,7 @@ use Livewire\Component;
 
 class CountryRecord extends Component
 {
+    public $search;
     public $collection = [];
     public $country;
     #[On('modal')]
@@ -25,7 +26,11 @@ class CountryRecord extends Component
 
     public function render()
     {
-        $this->collection = Country::with('shops', 'cities')->get();
+        $this->collection = Country::with('shops', 'cities')
+            ->when(strlen($this->search) > 0, function ($query){
+                $query->where('name', 'LIKE', "%$this->search%");
+            })
+            ->get();
         return view('livewire.country.country-record');
     }
 }
