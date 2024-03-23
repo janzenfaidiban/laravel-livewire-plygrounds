@@ -27,9 +27,17 @@ class ShopRecord extends Component
 
     public function render()
     {
-        $this->collection = Shop::with('city')
+        $this->collection = Shop::with(relations:'city')
             ->when(strlen($this->search) > 0, function ($query){
-                $query->where('name', 'LIKE', "%$this->search%");
+                $query
+                    ->where('name', 'LIKE', "%$this->search%")
+                    ->orWhereHas('city',function($city){
+                        $city
+                        ->where('name', 'LIKE', "%$this->search%")
+                        ->orWhereHas('country',function($country){
+                            $country->where('name','LIKE',"%$this->search%");
+                        });
+                    });
             })
             ->get();
         return view('livewire.shop.shop-record');

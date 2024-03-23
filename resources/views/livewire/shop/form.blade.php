@@ -3,7 +3,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col">
-                    <h1 class="h3">Create Shop</h1>
+                    <h1 class="h3">{{$formType}} Shop</h1>
                 </div>
                 <div class="col text-end">
                     <button wire:click="dispatch('clear')" class="btn btn-sm btn-dark">Back</button>
