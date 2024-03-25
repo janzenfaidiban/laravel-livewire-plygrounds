@@ -189,8 +189,9 @@ Folder dan file yang digunakan untuk project livewire
 |   |    |   ├── index.php ⌛
 │   |    |   └── ...
 |   |    ├── Shop ⌛
-|   |    |   ├── index.php ⌛
-│   |    |   └── ...
+|   |    |   ├── Index.php ✅
+│   |    |   └── From.php ✅
+|   |    |   └── ShopRecord.php✅
 │   └── ...
 ├── rosources
 │   ├── views
@@ -203,8 +204,10 @@ Folder dan file yang digunakan untuk project livewire
 |   |   |   |   ├── index.blade.php ⌛
 |   |   |   ├── city ⌛
 |   |   |   |   ├── index.blade.php ⌛
-|   |   |   ├── shop ⌛
-|   |   |   |   ├── index.blade.php ⌛
+|   |   |   ├── shop ✅
+|   |   |   |   ├── index.blade.php ✅
+|   |   |   |   ├── form.blade.php ✅
+|   |   |   |   ├── index.blade.php ✅
 │   └── ...
 ├── routes
 |   ├── livewire.php ✅
