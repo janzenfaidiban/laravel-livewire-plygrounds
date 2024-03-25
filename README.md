@@ -30,7 +30,10 @@ composer install
 
 ### Setup .env
 
-Copy the ```.env.example``` file
+Copy file ```.env.example``` dan modifikasi nama database
+```
+cp .env.example .env
+```
 
 ### Do the migration & seeder
 
