@@ -15,7 +15,7 @@
         <div class="card-header flex justify-between items-center">
             <h1 class="h3">Shops</h1>
             <div>
-                Total : {{  $collection->count() }}
+                Total Shops: {{  $collection->count() }}
             </div>
             <div>
                 <button wire:click="dispatch('action', { value: {{json_encode(true)}}, type: 'Create' })" class="btn btn-sm btn-dark">Create</button>
@@ -35,10 +35,10 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>no</th>
-                                <th>name</th>
-                                <th>city</th>
-                                <th>country</th>
+                                <th>No</th>
+                                <th>Shop Names</th>
+                                <th>City Names</th>
+                                <th>Country Names</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -48,7 +48,11 @@
                                     <td>{{ $item->id }}</td>
                                     <td>🛍️ {{ $item->name }}</td>
                                     <td>🏙️ {{ $item->city->name }}</td>
-                                    <td><img src="{{ $item->city->country->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->city->country->name }}</td>
+                                    {{-- <td>
+                                        <div class="flex gap-2">
+                                            <img src="{{ $item->city->country->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->city->country->name }}
+                                        </div>
+                                    </td> --}}
                                     <td>
                                         <button
                                             @click="openModalView = true"

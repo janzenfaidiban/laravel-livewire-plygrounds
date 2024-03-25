@@ -11,9 +11,9 @@
         <nav class="container lg:max-w-[1320px]">
             <div class="row">
                 <div class="col p-5">
-                    <a href="{{ route('livewire.country') }}" class="btn @if(Request::segment(2) == 'country') btn-dark @else btn-outline-dark @endif">🗺️ Country </a>
-                    <a href="{{ route('city') }}" class="btn @if(Request::segment(1) == 'city') btn-dark @else btn-outline-dark @endif">🏙️ City</a>
-                    <a href="{{ route('livewire.shop') }}" class="btn @if(Request::segment(2) == 'shop') btn-dark @else btn-outline-dark @endif">🛍️ Shop</a>
+                    <a href="{{ route('livewire.countries') }}" class="btn @if(Request::segment(2) == 'countries') btn-dark @else btn-outline-dark @endif">🗺️ Crounties </a>
+                    <a href="{{ route('livewire.cities') }}" class="btn @if(Request::segment(2) == 'cities') btn-dark @else btn-outline-dark @endif">🏙️ Cities</a>
+                    <a href="{{ route('livewire.shops') }}" class="btn @if(Request::segment(2) == 'shops') btn-dark @else btn-outline-dark @endif">🛍️ Shops</a>
                 </div>
             </div>
         </nav>

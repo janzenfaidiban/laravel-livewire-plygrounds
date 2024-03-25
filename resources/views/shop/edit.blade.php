@@ -10,7 +10,7 @@
                 <h1 class="h3">Edit Shop</h1>
             </div>
             <div class="col text-end">
-                <a href="{{ route('shop') }}" class="btn btn-sm btn-dark">Back</a>
+                <a href="{{ route('shops') }}" class="btn btn-sm btn-dark">Back</a>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
 
         {!! display_bootstrap_alerts() !!}
         
-        {!! Form::open(['route' => ['shop.update', $item->id], 'method' => 'post']) !!}
+        {!! Form::open(['route' => ['shops.update', $item->id], 'method' => 'post']) !!}
         @csrf @method('PUT')
 
             <div class="form-group mb-3">

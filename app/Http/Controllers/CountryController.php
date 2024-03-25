@@ -50,7 +50,7 @@ class CountryController extends Controller
 
                 $data->save();
 
-                return redirect()->route('country')->with(BootstrapAlerts::addSuccess('Success! Data has been created'));
+                return redirect()->route('countries')->with(BootstrapAlerts::addSuccess('Success! Data has been created'));
 
             } catch (\Throwable $th) {
                 return redirect()->back()->with(BootstrapAlerts::addError('Failed! Data can not be created'));
@@ -61,7 +61,7 @@ class CountryController extends Controller
     public function edit($id)
     {
         $item = Country::find($id);
-        return view('country.edit', compact('item'));
+        return view('countries.edit', compact('item'));
     }
 
     public function update(Request $request, $id)
@@ -87,7 +87,7 @@ class CountryController extends Controller
 
                 $data->update();
 
-                return redirect()->route('country')->with(BootstrapAlerts::addSuccess('Success! Data has been updated'));
+                return redirect()->route('countries')->with(BootstrapAlerts::addSuccess('Success! Data has been updated'));
 
             } catch (\Throwable $th) {
                 return redirect()->back()->with(BootstrapAlerts::addError('Failed! Data can not be updated'));
@@ -99,6 +99,6 @@ class CountryController extends Controller
     {
         $item = Country::find($id);
         $item->delete();
-        return redirect()->back()->with(BootstrapAlerts::addError('Deleted! Data has been deleted'));
+        return redirect()->back()->with(BootstrapAlerts::addSuccess('Deleted! Data has been deleted'));
     }
 }

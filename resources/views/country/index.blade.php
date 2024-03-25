@@ -11,7 +11,7 @@
                     Total : {{  $collection->count() }}
                 </div>
                 <div class="col text-end">
-                    <a href="{{ route('country.create') }}" class="btn btn-sm btn-dark">Create</a>
+                    <a href="{{ route('countries.create') }}" class="btn btn-sm btn-dark">Create</a>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
                         <td>{{ $item->created_at }}</td>
                         <td class="d-flex gap-2">
                             <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showModal{{$item->id}}" role="button">show</a>
-                            <a href="{{ route('country.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
+                            <a href="{{ route('countries.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
                             <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button">delete</a>
                         </td>
                     </tr>

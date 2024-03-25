@@ -21,7 +21,7 @@ class CountryRecord extends Component
     {
         $country = Country::query()->find($id);
         $country->delete();
-        session()->flash('alert-message', ['message' => 'Deleted! Data has been deleted', 'type' => 'danger']);
+        session()->flash('alert-message', ['message' => 'Deleted! Data has been deleted', 'type' => 'success']);
     }
 
     public function render()

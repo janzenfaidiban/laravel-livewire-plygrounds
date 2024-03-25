@@ -13,7 +13,7 @@
                 Total : {{  $collection->count() }}
             </div>
             <div class="col text-end">
-                <a href="{{ route('shop.create') }}" class="btn btn-sm btn-dark">Create</a>
+                <a href="{{ route('shops.create') }}" class="btn btn-sm btn-dark">Create</a>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
                     <td><img src="{{ $item->city->country->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->city->country->name }}</td>
                     <td>
                         <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showModal{{$item->id}}" role="button">show</a>
-                        <a href="{{ route('shop.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
+                        <a href="{{ route('shops.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
                         <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button">delete</a>
                     </td>
                 </tr>
