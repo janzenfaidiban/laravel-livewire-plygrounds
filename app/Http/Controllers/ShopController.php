@@ -92,6 +92,6 @@ class ShopController extends Controller
     {
         $item = Shop::find($id);
         $item->delete();
-        return redirect()->back()->with(BootstrapAlerts::addError('Deleted! Data has been deleted'));
+        return redirect()->back()->with(BootstrapAlerts::addSuccess('Deleted! Data has been deleted'));
     }
 }

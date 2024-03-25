@@ -21,15 +21,31 @@
                 {!! Form::text('name', old('name' ?? ''),
                         [
                             'class' => 'form-control',
-                            'placeholder' => 'country name',
+                            'placeholder' => 'city name',
                             'wire:model' => 'name'
                         ]
                     )
                 !!}
                 <small class="text-muted fst-italic">
-                    <code>United States</code>
+                    <code>Port Numbay</code>
                 </small>
             </div> <!-- form-group end -->
+
+            
+
+            <div class="form-group mb-3">
+                {!! Form::label('name', 'Country', array('class' => 'form-label'))  !!}
+                {!! Form::select('country_id', App\Models\Country::orderBy('name')->pluck('name', 'id'), null,
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'Select a country',
+                            'wire:model' => 'country_id'
+
+
+                        ]
+                    )
+                !!}
+            </div>
 
             <div class="form-group mb-3">
                 {!! Form::submit('submit', array( 'class' => 'btn btn-dark bg-[#212529]' )) !!}

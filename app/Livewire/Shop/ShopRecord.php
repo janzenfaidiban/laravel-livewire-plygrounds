@@ -22,7 +22,7 @@ class ShopRecord extends Component
     {
         $shop = Shop::query()->find($id);
         $shop->delete();
-        session()->flash('alert-message', ['message' => 'Deleted! Data has been deleted', 'type' => 'danger']);
+        session()->flash('alert-message', ['message' => 'Deleted! Data has been deleted', 'type' => 'success']);
     }
 
     public function render()

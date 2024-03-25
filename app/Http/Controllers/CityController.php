@@ -109,6 +109,6 @@ class CityController extends Controller
     {
         $item = City::find($id);
         $item->delete();
-        return redirect()->back()->with(BootstrapAlerts::addError('Deleted! Data has been deleted'));
+        return redirect()->back()->with(BootstrapAlerts::addSuccess('Deleted! Data has been deleted'));
     }
 }

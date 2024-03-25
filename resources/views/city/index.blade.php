@@ -13,7 +13,7 @@
                 Total : {{  $collection->count() }}
             </div>
             <div class="col text-end">
-                <a href="{{ route('city.create') }}" class="btn btn-sm btn-dark">Create</a>
+                <a href="{{ route('cities.create') }}" class="btn btn-sm btn-dark">Create</a>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
                     <td>{{ $item->shops->count() }}</td>
                     <td>
                         <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showModal{{$item->id}}" role="button">show</a>
-                        <a href="{{ route('city.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
+                        <a href="{{ route('cities.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
                         <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button">delete</a>
                     </td>
                 </tr>
