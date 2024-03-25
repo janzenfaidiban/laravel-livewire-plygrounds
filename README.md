@@ -183,10 +183,11 @@ Folder dan file yang digunakan untuk project livewire
 ├── app
 │   ├── Livewire
 |   |    ├── Country ✅
-|   |    |   ├── index.php ⌛
-│   |    |   └── ...
+|   |    |   ├── Index.php ✅
+│   |    |   └── From.php ✅
+|   |    |   └── CountryRecord.php✅
 |   |    ├── City ⌛
-|   |    |   ├── index.php ⌛
+|   |    |   ├── form.php ⌛
 │   |    |   └── ...
 |   |    ├── Shop ⌛
 |   |    |   ├── Index.php ✅
@@ -195,22 +196,25 @@ Folder dan file yang digunakan untuk project livewire
 │   └── ...
 ├── rosources
 │   ├── views
-│   |   ├── components ✅
-|   |   |   ├── layouts ✅
+│   |   ├── components
+|   |   |   ├── layouts ⌛
 |   |   |   |   ├── app.blade.php ⌛
-|   |   |   ├── modalAlpine.blade.php ⌛
+|   |   |   ├── alert.blade.php ✅
+|   |   |   ├── modalAlpine.blade.php ✅
 │   |   ├── livewire
-|   |   |   ├── country ✅
-|   |   |   |   ├── index.blade.php ⌛
 |   |   |   ├── city ⌛
-|   |   |   |   ├── index.blade.php ⌛
-|   |   |   ├── shop ✅
-|   |   |   |   ├── index.blade.php ✅
+|   |   |   |   ├── form.blade.php ⌛
+|   |   |   ├── country ⌛
 |   |   |   |   ├── form.blade.php ✅
 |   |   |   |   ├── index.blade.php ✅
+|   |   |   |   ├── shop-record.blade.php ✅
+|   |   |   ├── shop ⌛
+|   |   |   |   ├── form.blade.php ✅
+|   |   |   |   ├── index.blade.php ✅
+|   |   |   |   ├── shop-record.blade.php ✅
 │   └── ...
 ├── routes
-|   ├── livewire.php ✅
+|   ├── livewire.php ⌛
 └── README.md
 ```
 
@@ -237,6 +241,16 @@ git push origin <branch-name>
 atau
 ```
 git push --set-upstream origin <branch-name>
+```
+
+Menggabungkan perubahan dari branch <b>main</b> ke branch <b>dev-name</b>. 
+Pindah dulu ke branch ```dev-name```
+```
+git checkout dev-name
+```
+Gabungkan perubahan dari branch main menggunakan perintah ```merge```
+```
+git merge main
 ```
 
 
