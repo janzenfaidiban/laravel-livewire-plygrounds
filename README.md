@@ -185,13 +185,14 @@ Folder dan file yang digunakan untuk project livewire
 .
 ├── app
 │   ├── Livewire
-|   |    ├── Country ✅
+|   |    ├── Country ⌛
 |   |    |   ├── Index.php ✅
 │   |    |   └── From.php ✅
 |   |    |   └── CountryRecord.php✅
 |   |    ├── City ⌛
-|   |    |   ├── form.php ⌛
-│   |    |   └── ...
+|   |    |   └── CityRecord.php✅
+|   |    |   ├── form.php ✅
+|   |    |   └── Index.php ✅
 |   |    ├── Shop ⌛
 |   |    |   ├── Index.php ✅
 │   |    |   └── From.php ✅
@@ -206,7 +207,9 @@ Folder dan file yang digunakan untuk project livewire
 |   |   |   ├── modalAlpine.blade.php ✅
 │   |   ├── livewire
 |   |   |   ├── city ⌛
-|   |   |   |   ├── form.blade.php ⌛
+|   |   |   |   ├── city-record.blade.php ✅
+|   |   |   |   ├── form.blade.php ✅
+|   |   |   |   ├── index.blade.php ✅
 |   |   |   ├── country ⌛
 |   |   |   |   ├── form.blade.php ✅
 |   |   |   |   ├── index.blade.php ✅
