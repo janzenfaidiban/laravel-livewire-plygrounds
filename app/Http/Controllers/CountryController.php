@@ -99,7 +99,7 @@ class CountryController extends Controller
         }
     }
 
-    public function destroy()
+    public function distroy()
     {
         // 
     }
