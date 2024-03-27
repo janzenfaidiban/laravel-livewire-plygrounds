@@ -6,6 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ ucfirst(Request::segment(2) . ' - ' ?? '') }}Laravel Playground</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .icon {
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-left: 100px;
+        background: url("https://icons.veryicon.com/png/o/application/full-of-interest/search-555.png") no-repeat left;
+        background-size: 15px;
+        background-position-x: 5px;
+        /* color: #b0b0b0 */
+        }
+    </style>
 </head>
 <body>
 
@@ -20,9 +32,10 @@
     </nav>
 
     <main>
+
         <div class="container">
             <div class="row">
-                <div class="col p-5">
+                <div class="col px-5 pt-5">
 
                     @yield('main')
 

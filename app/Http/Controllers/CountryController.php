@@ -9,10 +9,14 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class CountryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $collection = Country::with('shops', 'cities')->get();
-        return view('country.index', compact('collection'));
+        $collection =Country::with('shops', 'cities')
+        ->when(strlen($request->s) > 0, function ($query) use ($request){
+            $query->where('name', 'LIKE', "%$request->s%");
+        })
+        ->get();
+        return view('country.index', compact('collection','request'));
     }
 
     public function show($id)
