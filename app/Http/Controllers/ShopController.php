@@ -9,10 +9,22 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class ShopController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $collection = Shop::with('city')->get();
-        return view('shop.index', compact('collection'));
+        $collection =  Shop::with(relations:'city')
+        ->when(strlen($request->s) > 0, function ($query) use ($request){
+            $query
+                ->where('name', 'LIKE', "%$request->s%")
+                ->orWhereHas('city',function($city) use ($request){
+                    $city
+                    ->where('name', 'LIKE', "%$request->s%")
+                    ->orWhereHas('country',function($country) use ($request) {
+                        $country->where('name','LIKE',"%$request->s%");
+                    });
+                });
+        })
+        ->get();
+        return view('shop.index', compact('collection','request'));
     }
 
     public function create()
