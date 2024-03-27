@@ -20,6 +20,11 @@ Route::prefix('laravel')->group(function () {
         
         Route::post('countries/store','store')->name('countries.store');
         Route::put('countries/{id}/update','update')->name('countries.update');
+        // distroy
+        Route::delete('countries/{id}/distroy','distroy')->name('countries.distroy');
+        // restore
+        Route::post('countries/{id}/restore','restore')->name('countries.restore');
+        // delete
         Route::delete('countries/{id}/delete','delete')->name('countries.delete');
         
     });
@@ -33,6 +38,11 @@ Route::prefix('laravel')->group(function () {
         
         Route::post('cities/store','store')->name('cities.store');
         Route::put('cities/{id}/update','update')->name('cities.update');
+        // distroy
+        Route::delete('cities/{id}/distroy','distroy')->name('cities.distroy');
+        // restore
+        Route::post('cities/{id}/restore','restore')->name('cities.restore');
+        // delete
         Route::delete('cities/{id}/delete','delete')->name('cities.delete');
     
     });
@@ -47,6 +57,11 @@ Route::prefix('laravel')->group(function () {
         
         Route::post('shops/store','store')->name('shops.store');
         Route::put('shops/{id}/update','update')->name('shops.update');
+        // distroy
+        Route::delete('shops/{id}/distroy','distroy')->name('shops.distroy');
+        // restore
+        Route::post('shops/{id}/restore','restore')->name('shops.restore');
+        // delete
         Route::delete('shops/{id}/delete','delete')->name('shops.delete');
 
     });

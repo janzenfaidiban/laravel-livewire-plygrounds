@@ -104,7 +104,7 @@ class ShopController extends Controller
         // 
     }
 
-    public function destroy()
+    public function distroy()
     {
         // 
     }
