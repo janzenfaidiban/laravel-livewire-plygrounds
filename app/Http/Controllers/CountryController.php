@@ -99,10 +99,25 @@ class CountryController extends Controller
         }
     }
 
+    public function destroy()
+    {
+        // 
+    }
+
+    public function restore()
+    {
+        // 
+    }
+
     public function delete($id)
     {
         $item = Country::find($id);
         $item->delete();
         return redirect()->back()->with(BootstrapAlerts::addSuccess('Deleted! Data has been deleted'));
+    }
+
+    public function forceDelete()
+    {
+        // 
     }
 }

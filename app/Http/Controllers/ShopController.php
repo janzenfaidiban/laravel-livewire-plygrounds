@@ -99,11 +99,25 @@ class ShopController extends Controller
             }
         }
     }
+    public function restore()
+    {
+        // 
+    }
+
+    public function destroy()
+    {
+        // 
+    }
 
     public function delete($id)
     {
         $item = Shop::find($id);
         $item->delete();
         return redirect()->back()->with(BootstrapAlerts::addSuccess('Deleted! Data has been deleted'));
+    }
+
+     public function forceDelete()
+    {
+        // 
     }
 }
