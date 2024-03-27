@@ -104,6 +104,11 @@ class CountryController extends Controller
         // 
     }
 
+    public function restore()
+    {
+        // 
+    }
+
     public function delete($id)
     {
         $item = Country::find($id);
