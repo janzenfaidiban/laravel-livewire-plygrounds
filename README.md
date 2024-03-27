@@ -1,4 +1,4 @@
-# Laravel Playground
+# 💡 Laravel Playground
 
 ## Project Overview
 Project ini dibuat untuk mempelajari dan mendalami pengembangan aplikasi web menggunakan dengan konsep TALLSTACK.
