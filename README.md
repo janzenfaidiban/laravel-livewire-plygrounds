@@ -258,6 +258,10 @@ Gabungkan perubahan dari branch main menggunakan perintah ```merge```
 ```
 git merge main
 ```
+Cara untuk menghapus branch
+```
+git branch --delete <branchname>
+```
 
 
 # 📚 LEARNING RESOURCES
