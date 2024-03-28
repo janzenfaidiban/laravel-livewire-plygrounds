@@ -266,6 +266,35 @@ git branch --delete <branchname>
 
 # 📚 LEARNING RESOURCES
 
+## Dokumentasi Livewire
+
+Cara instal livewire lihat di sini
+https://livewire.laravel.com/docs/installation
+
+Install livewire
+```
+composer require livewire/livewire
+```
+
+Publikasi konfigurasi livewire gunakan perintah berikut
+```
+php artisan livewire:publish --config
+```
+
+## Dokumentasi Tailwind CSS
+
+Cara menginstal tailwind css, kunjungi di sini
+https://tailwindcss.com/docs/guides/laravel
+
+
+```
+npm install -D tailwindcss postcss autoprefixer
+```
+
+```
+npx tailwindcss init -p
+```
+
 Videos, articles, and urls from any other platforms you can mention bellow here.
 
 ## Laravel Collective
