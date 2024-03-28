@@ -11,7 +11,7 @@ class ShopController extends Controller
 {
     public function index(Request $request)
     {
-        $collection =  Shop::with(relations:'city')
+        $collection =  Shop::with('city','tags')
         ->when(strlen($request->s) > 0, function ($query) use ($request){
             $query
                 ->where('name', 'LIKE', "%$request->s%")
@@ -101,12 +101,12 @@ class ShopController extends Controller
     }
     public function restore()
     {
-        // 
+        //
     }
 
     public function distroy()
     {
-        // 
+        //
     }
 
     public function delete($id)
@@ -118,6 +118,6 @@ class ShopController extends Controller
 
      public function forceDelete()
     {
-        // 
+        //
     }
 }

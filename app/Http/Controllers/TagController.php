@@ -12,7 +12,7 @@ class TagController extends Controller
 {
     public function index(Request $request)
     {
-        $collection =  Tag::when(strlen($request->s) > 0, function ($query) use ($request){
+        $collection =  Tag::with(relations:'shops')->when(strlen($request->s) > 0, function ($query) use ($request){
             $query->where('name', 'LIKE', "%$request->s%");
         })
         ->get();
