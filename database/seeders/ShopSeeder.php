@@ -20,6 +20,7 @@ class ShopSeeder extends Seeder
         Shop::create([
             'city_id' => 1,
             'name' => fake()->words(2, true),
+
         ]);
         Shop::create([
             'city_id' => 2,

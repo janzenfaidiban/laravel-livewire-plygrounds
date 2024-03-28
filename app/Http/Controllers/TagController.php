@@ -2,34 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Shop;
-use Eelcol\LaravelBootstrapAlerts\Facade\BootstrapAlerts;
 use Illuminate\Http\Request;
+use Eelcol\LaravelBootstrapAlerts\Facade\BootstrapAlerts;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
+use App\Models\Tag;
+use Illuminate\Support\Str;
 
-class ShopController extends Controller
+class TagController extends Controller
 {
     public function index(Request $request)
     {
-        $collection =  Shop::with('city','tags')
-        ->when(strlen($request->s) > 0, function ($query) use ($request){
-            $query
-                ->where('name', 'LIKE', "%$request->s%")
-                ->orWhereHas('city',function($city) use ($request){
-                    $city
-                    ->where('name', 'LIKE', "%$request->s%")
-                    ->orWhereHas('country',function($country) use ($request) {
-                        $country->where('name','LIKE',"%$request->s%");
-                    });
-                });
+        $collection =  Tag::with(relations:'shops')->when(strlen($request->s) > 0, function ($query) use ($request){
+            $query->where('name', 'LIKE', "%$request->s%");
         })
         ->get();
-        return view('shop.index', compact('collection','request'));
+        return view('tag.index', compact('collection','request'));
     }
 
     public function create()
     {
-        return view('shop.create');
+        return view('tag.create');
     }
 
     public function store(Request $request)
@@ -49,14 +41,13 @@ class ShopController extends Controller
             return redirect()->back()->withInput($request->all())->withErrors($validator);
         } else {
             try {
-                $data = new Shop();
+                $data = new tag();
 
                 $data->name = $request->name;
-                $data->flag = $request->flag;
-
+                $data->slug = Str::slug($request->name);
                 $data->save();
 
-                return redirect()->route('shop')->with(BootstrapAlerts::addSuccess('Success! Data has been created'));
+                return redirect()->route('tags')->with(BootstrapAlerts::addSuccess('Success! Data has been created'));
 
             } catch (\Throwable $th) {
                 return redirect()->back()->with(BootstrapAlerts::addError('Failed! Data can not be created'));
@@ -66,8 +57,8 @@ class ShopController extends Controller
 
     public function edit($id)
     {
-        $item = Shop::find($id);
-        return view('shop.edit', compact('item'));
+        $item = tag::find($id);
+        return view('tag.edit', compact('item'));
     }
 
     public function update(Request $request, $id)
@@ -86,13 +77,13 @@ class ShopController extends Controller
             return redirect()->back()->withInput($request->all())->withErrors($validator);
         } else {
             try {
-                $data = Shop::find($id);
+                $data = tag::find($id);
 
                 $data->name = $request->name;
 
                 $data->update();
 
-                return redirect()->route('shop')->with(BootstrapAlerts::addSuccess('Success! Data has been updated'));
+                return redirect()->route('tags')->with(BootstrapAlerts::addSuccess('Success! Data has been updated'));
 
             } catch (\Throwable $th) {
                 return redirect()->back()->with(BootstrapAlerts::addError('Failed! Data can not be updated'));
@@ -111,7 +102,7 @@ class ShopController extends Controller
 
     public function delete($id)
     {
-        $item = Shop::find($id);
+        $item = tag::find($id);
         $item->delete();
         return redirect()->back()->with(BootstrapAlerts::addSuccess('Deleted! Data has been deleted'));
     }

@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('main')
-<form class="">
-    <div class="row d-flex justify-content-end">
-        <div class="col-6">
-            <div class="input-group mb-3">
-                <input type="text"  value="{{$request->s ?? ''}}" class="form-control icon" name="s" placeholder="Search country" >
+    <form class="">
+        <div class="row d-flex justify-content-end">
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <input type="text"  value="{{$request->s ?? ''}}" class="form-control icon" name="s" placeholder="Search country" >
+                </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
     <div class="card mb-4">
         <div class="card-header">
             <div class="row">
