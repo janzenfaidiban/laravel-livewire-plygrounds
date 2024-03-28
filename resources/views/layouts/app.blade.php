@@ -27,6 +27,7 @@
                 <a href="{{ route('countries') }}" class="btn @if(Request::segment(2) == 'countries') btn-dark @else btn-outline-dark @endif">🗺️ Countries </a>
                 <a href="{{ route('cities') }}" class="btn @if(Request::segment(2) == 'cities') btn-dark @else btn-outline-dark @endif">🏙️ Cities</a>
                 <a href="{{ route('shops') }}" class="btn @if(Request::segment(2) == 'shops') btn-dark @else btn-outline-dark @endif">🛍️ Shops</a>
+                <a href="{{ route('tags') }}" class="btn @if(Request::segment(2) == 'tags') btn-dark @else btn-outline-dark @endif">📌Tags</a>
             </div>
         </div>
     </nav>

@@ -10,9 +10,10 @@
                 <div class="mb-3">
                     <div><span>Name: </span> {{ $item->name ?? '' }}</div>
                     <hr>
-                    Data Tag :
-                    @foreach ($item->tags as $tag )
-                             {{ $tag->name ?? '' }},
+                    Data Shop
+                    @foreach ($item->shops as $shop )
+                        <div><span>Name: </span> {{ $shop->name ?? '' }}</div>
+
                     @endforeach
                     <hr>
                     <div><span>Created at: </span> {{ $item->created_at ?? '' }}</div>
