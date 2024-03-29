@@ -3,8 +3,8 @@
 namespace App\Livewire\Country;
 
 use App\Models\Country;
-use Eelcol\LaravelBootstrapAlerts\Facade\BootstrapAlerts;
 use Illuminate\Support\Str;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 
 class Form extends Component
@@ -12,12 +12,17 @@ class Form extends Component
     public $name = '';
     public $flag = '';
     public $formType = '';
-    public $countries = [];
+    public $country = [];
+
+    #[Url(history: true, except: '')]
+    public $id;
 
     public function mount(): void
     {
-        $this->name = $this->countries['name'] ?? '';
-        $this->flag = $this->countries['flag'] ?? '';
+        $this->country = Country::query()->find($this->id ?? $this->country['id'] ?? '');
+        if($this->formType == 'Create') $this->country = [];
+        $this->name = $this->country['name'] ?? '';
+        $this->flag = $this->country['flag'] ?? '';
     }
 
     public function save(): void
@@ -33,7 +38,7 @@ class Form extends Component
 
     public function edit(): void
     {
-        $country = Country::find($this->countries['id']);
+        $country = $this->country;
         $country->name = $this->name;
         $country->flag = $this->flag;
         $country->save();

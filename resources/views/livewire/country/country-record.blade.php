@@ -15,10 +15,10 @@
         <div class="card-header flex justify-between items-center">
             <h1 class="h3">Countries</h1>
             <div>
-                Total Countries: {{  $collection->count() }}
+                Total Countries: {{  $countries->total() }}
             </div>
             <div>
-                <button wire:click="dispatch('action', { value: {{json_encode(true)}}, type: 'Create' })" class="btn btn-sm btn-dark">Create</button>
+                <button wire:click="dispatch('action', {type: 'Create' })" class="btn btn-sm btn-dark">Create</button>
             </div>
         </div>
         <div class="card-body">
@@ -31,7 +31,7 @@
                 <x-alert message="{{ session('alert-message')['message'] }}" class="{{$class}}" />
             @endif
 
-                @if($collection->count() > 0)
+                @if($countries->items() > 0)
                     <table class="table">
                         <thead>
                             <tr>
@@ -43,9 +43,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($collection as $item)
+                            @foreach ($countries->items() as $item)
                                 <tr>
-                                    <td>{{ $item->id }}</td>
+                                    <td>{{ ($countries->currentpage()-1) * $countries->perpage() + $loop->index + 1 }}</td>
                                     <td>
                                         <div class="flex gap-2">
                                             <img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}
@@ -61,7 +61,7 @@
                                             show
                                         </button>
                                         <button
-                                            wire:click="dispatch('action', { value: {{json_encode(true)}}, type: 'Edit', data:{{json_encode($item)}} })"
+                                            wire:click="dispatch('action', {type: 'Edit', data:{{json_encode($item)}} })"
                                             class="btn btn-sm btn-outline-dark"
                                         >
                                             edit
@@ -83,6 +83,8 @@
                         <img class="w-56" src="{{asset('assets/undraw_no_data.svg')}}" alt="">
                     </div>
                 @endif
+
+                {{ $countries->links() }}
         </div>
 
         <!-- Modal View -->

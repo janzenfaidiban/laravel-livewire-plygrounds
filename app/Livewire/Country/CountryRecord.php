@@ -3,14 +3,30 @@
 namespace App\Livewire\Country;
 
 use App\Models\Country;
+use Illuminate\View\View;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Url;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class CountryRecord extends Component
 {
+    use WithPagination;
+
     public $search;
-    public $collection = [];
     public $country;
+
+    #[Url]
+    public $page;
+    protected function queryString(): array
+    {
+        return [
+            'search' => [
+                'as' => 'q',
+            ]
+        ];
+    }
+
     #[On('modal')]
     public function handleEvent($data): void
     {
@@ -24,13 +40,24 @@ class CountryRecord extends Component
         session()->flash('alert-message', ['message' => 'Deleted! Data has been deleted', 'type' => 'success']);
     }
 
-    public function render()
+    public function updatingSearch(): void
     {
-        $this->collection = Country::with('shops', 'cities')
+        $this->resetPage();
+    }
+
+    public function resetPage(): void
+    {
+        $this->paginators['page'] = 1;
+        $this->page = 1;
+    }
+
+    public function render(): View
+    {
+        $countries = Country::with('shops', 'cities')
             ->when(strlen($this->search) > 0, function ($query){
                 $query->where('name', 'LIKE', "%$this->search%");
             })
-            ->get();
-        return view('livewire.country.country-record');
+            ->paginate(5)->withQueryString();
+        return view('livewire.country.country-record', ['countries' => $countries]);
     }
 }
