@@ -32,7 +32,8 @@
                     <x-alert message="{{ session('alert-message')['message'] }}" class="{{$class}}" />
                 @endif
 
-                @if($collection->count() > 0)
+                {{-- @if($collection->count() > 0) --}}
+                @if($collection->items() > 0)
 
                 <div class="overflow-x-auto">
                     <table class="table">
@@ -89,7 +90,7 @@
                     </div>
                 @endif
 
-                {{-- {{ $collection->links() }} --}}
+                {{ $collection->links() }}
 
             </div> <!-- card-body end -->
         </div> <!-- card end -->

@@ -2,11 +2,11 @@
 
 namespace App\Livewire\Country;
 
-use App\Models\Country;
-use Illuminate\View\View;
-use Livewire\Attributes\On;
-use Livewire\Attributes\Url;
 use Livewire\Component;
+use App\Models\Country;
+use Livewire\Attributes\On;
+use Illuminate\View\View;
+use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 
 class CountryRecord extends Component
