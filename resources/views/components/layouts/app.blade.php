@@ -52,11 +52,11 @@
 
 <footer class="">
   <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {{ Carbon\Carbon::now()->format('Y') }} <a href="https://sacode.web.id/" class="hover:underline">SaCode Community</a>.
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {{ Carbon\Carbon::now()->format('Y') }} <a href="https://sacode.web.id/" target="_blank" class="hover:underline">SaCode Community</a>.
   </span>
   <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
       <li>
-          <a href="https://github.com/janzenfaidiban/laravel-livewire-plygrounds" target="_blank" class="hover:underline me-4 md:me-6">Main Repository</a>
+          <a href="https://github.com/janzenfaidiban/laravel-livewire-plygrounds" target="_blank" class="hover:underline me-4 md:me-6">Repository</a>
       </li>
       <li>
           <a href="https://github.com/janzenfaidiban/laravel-livewire-plygrounds/blob/main/README.md" target="_blank" class="hover:underline me-4 md:me-6">README.md</a>

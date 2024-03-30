@@ -11,7 +11,7 @@ Dalam satu repository ini terdapat 2 pola pengembangan, yaitu :
 ## Project Screenshots
 
 Tampilan halaman Country
-<img src="public/images/country.png">
+<img src="public/images/country-2.png">
 
 ## 📙 Installation
 
