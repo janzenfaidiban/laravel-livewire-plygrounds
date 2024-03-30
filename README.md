@@ -10,8 +10,17 @@ Dalam satu repository ini terdapat 2 pola pengembangan, yaitu :
 
 ## Project Screenshots
 
-Tampilan halaman Country
-<img src="public/images/country-2.png">
+Table
+![country](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/965e442f-7cfa-4b2b-80b3-a62932361e67)
+
+Edit
+![country-edit](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/d722bfb2-472c-4597-aa43-cb8ddda6e890)
+
+Show Modal
+![modal](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/4704a612-400b-4feb-9b05-e25f79b9e5f2)
+
+Delete Modal 
+![modal-delete](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/f7acd008-4b81-4f19-8d88-4676970b56b6)
 
 ## 📙 Installation
 
