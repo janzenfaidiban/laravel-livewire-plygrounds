@@ -1,43 +1,41 @@
 <div>
-    <div class="card mb-4">
-        <div class="card-header">
-            <div class="row">
-                <div class="col">
-                    <h1 class="h3">{{$formType}} City</h1>
-                </div>
-                <div class="col text-end">
-                    <button wire:click="dispatch('clear')" class="btn btn-sm btn-dark">Back</button>
+    <div class="card g-base-100 shadow-xl">
+        <div class="card-body">
+
+            <div class="flex justify-between mb-9">
+                <h2 class="card-title text-6xl font-bold">{{$formType}} Shop</h2>
+                <div>
+                    <button wire:click="dispatch('clear')" class="btn btn-outline"><i class="fa-solid fa-arrow-left-long"></i> Back</button>
                 </div>
             </div>
-        </div>
-        <div class="card-body">
 
             {!! display_bootstrap_alerts() !!}
 
             {!! Form::open(['wire:submit' => $formType === 'Create' ? 'save' : 'edit']) !!}
 
-            <div class="form-group mb-3">
-                {!! Form::label('name', 'Name', array('class' => 'form-label'))  !!}
+            <label class="input input-bordered flex items-center gap-2">
+                City Name :
                 {!! Form::text('name', old('name' ?? ''),
                         [
-                            'class' => 'form-control',
+                            'class' => 'grow',
                             'placeholder' => 'city name',
                             'wire:model' => 'name'
                         ]
                     )
                 !!}
-                <small class="text-muted fst-italic">
+            </label> <!-- form-group end -->
+            <small class="text-muted fst-italic block">
+                <i>
                     <code>Port Numbay</code>
-                </small>
-            </div> <!-- form-group end -->
+                </i>
+            </small>
 
             
 
-            <div class="form-group mb-3">
-                {!! Form::label('name', 'Country', array('class' => 'form-label'))  !!}
+            <label class="form-control w-full mt-4">
                 {!! Form::select('country_id', App\Models\Country::orderBy('name')->pluck('name', 'id'), null,
                         [
-                            'class' => 'form-control',
+                            'class' => 'select select-bordered',
                             'placeholder' => 'Select a country',
                             'wire:model' => 'country_id'
 
@@ -45,11 +43,11 @@
                         ]
                     )
                 !!}
-            </div>
+            </label>
 
-            <div class="form-group mb-3">
-                {!! Form::submit('submit', array( 'class' => 'btn btn-dark bg-[#212529]' )) !!}
-                {!! Form::reset('reset', array( 'class' => 'btn btn-outline-dark' )) !!}
+            <div class="mt-4">
+                {{ Form::button('<i class="fa-solid fa-floppy-disk"></i> Save', ['type' => 'submit', 'class' => 'btn btn-neutral'] )  }}
+                {{ Form::button('<i class="fa-solid fa-rotate"></i> Reset', ['type' => 'reset', 'class' => 'btn btn-outline'] )  }}
             </div>
 
             {!! Form::close() !!}

@@ -41,9 +41,9 @@
                 </i>
             </small>
 
-            <div class="form-group mt-9">
-                {!! Form::submit('Submit', array( 'class' => 'btn btn-neutral' )) !!}
-                {!! Form::reset(' Reset', array( 'class' => 'btn btn-outline' )) !!}
+            <div class="mt-4">
+                {{ Form::button('<i class="fa-solid fa-floppy-disk"></i> Save', ['type' => 'submit', 'class' => 'btn btn-neutral'] )  }}
+                {{ Form::button('<i class="fa-solid fa-rotate"></i> Reset', ['type' => 'reset', 'class' => 'btn btn-outline'] )  }}
             </div>
 
             {!! Form::close() !!}
