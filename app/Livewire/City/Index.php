@@ -5,7 +5,6 @@ namespace App\Livewire\City;
 use Livewire\Component;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Url;
-use App\Models\City;
 
 class Index extends Component
 {
