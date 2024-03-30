@@ -327,3 +327,13 @@ https://youtu.be/5s-_SnVl-1g?si=rz_TAErEmOtUR2JS
 
 Tutorial untuk memahami pembuatan relasi pada project laravel
 https://medium.com/@barutahucoding/perbedaan-hasmany-dan-belongstomany-eloquent-laravel-6236238f243e
+
+## Daisy UI for Tailwind CSS
+
+Learn from documentation
+https://daisyui.com/docs
+
+Install daisyUI:
+```
+npm i -D daisyui@latest
+```
