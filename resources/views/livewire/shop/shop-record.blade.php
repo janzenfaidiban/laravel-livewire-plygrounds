@@ -39,6 +39,7 @@
                                 <th>Shop Names</th>
                                 <th>City Names</th>
                                 <th>Country Names</th>
+                                <th>Tags</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -48,11 +49,19 @@
                                     <td>{{ $item->id }}</td>
                                     <td>🛍️ {{ $item->name }}</td>
                                     <td>🏙️ {{ $item->city->name }}</td>
-                                    {{-- <td>
+                                     <td>
                                         <div class="flex gap-2">
-                                            <img src="{{ $item->city->country->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->city->country->name }}
+                                            <img src="{{ $item->city->country->flag ?? '' }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->city->country->name ?? '-' }}
                                         </div>
-                                    </td> --}}
+                                    </td>
+                                    <td>
+                                        @php
+                                            $item->tags()->each(function ($tag, $i){
+                                                echo $i>0 ? ', ' : '';
+                                                echo $tag->name;
+                                             });
+                                        @endphp
+                                    </td>
                                     <td>
                                         <button
                                             @click="openModalView = true"

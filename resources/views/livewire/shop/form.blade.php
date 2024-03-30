@@ -48,6 +48,10 @@
                     !!}
                 </div>
 
+            <div class="form-group mb-3">
+                <x-input-tags :tags="$tags" event="tagsAdded" />
+            </div>
+
                 <div class="form-group mb-3">
                     {!! Form::submit('submit', array( 'class' => 'btn btn-outline-dark' )) !!}
                     {!! Form::reset('reset', array( 'class' => 'btn btn-outline-dark' )) !!}
