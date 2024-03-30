@@ -11,7 +11,7 @@ Dalam satu repository ini terdapat 2 pola pengembangan, yaitu :
 ## Project Screenshots
 
 Tampilan halaman Country
-<img src="public/images/country.png">
+<img src="public/images/country-2.png">
 
 ## 📙 Installation
 
@@ -266,6 +266,35 @@ git branch --delete <branchname>
 
 # 📚 LEARNING RESOURCES
 
+## Dokumentasi Livewire
+
+Cara instal livewire lihat di sini
+https://livewire.laravel.com/docs/installation
+
+Install livewire
+```
+composer require livewire/livewire
+```
+
+Publikasi konfigurasi livewire gunakan perintah berikut
+```
+php artisan livewire:publish --config
+```
+
+## Dokumentasi Tailwind CSS
+
+Cara menginstal tailwind css, kunjungi di sini
+https://tailwindcss.com/docs/guides/laravel
+
+
+```
+npm install -D tailwindcss postcss autoprefixer
+```
+
+```
+npx tailwindcss init -p
+```
+
 Videos, articles, and urls from any other platforms you can mention bellow here.
 
 ## Laravel Collective
@@ -298,3 +327,13 @@ https://youtu.be/5s-_SnVl-1g?si=rz_TAErEmOtUR2JS
 
 Tutorial untuk memahami pembuatan relasi pada project laravel
 https://medium.com/@barutahucoding/perbedaan-hasmany-dan-belongstomany-eloquent-laravel-6236238f243e
+
+## Daisy UI for Tailwind CSS
+
+Learn from documentation
+https://daisyui.com/docs
+
+Install daisyUI:
+```
+npm i -D daisyui@latest
+```
