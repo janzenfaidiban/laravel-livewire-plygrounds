@@ -1,116 +1,140 @@
 <div>
-    <form class="max-w-md ml-auto mb-4">
-        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
-        <div class="relative">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                </svg>
-            </div>
-            <input wire:model.live="search" type="search" id="default-search" class="block w-full py-2 px-6 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 " placeholder="Search country..." required />
-        </div>
-    </form>
 
-    <div class="card mb-4" x-data="{openModalView: false, openModalDelete: false}">
-        <div class="card-header flex justify-between items-center">
-            <h1 class="h3">Countries</h1>
-            <div>
-                Total Countries: {{  $countries->total() }}
-            </div>
-            <div>
-                <button wire:click="dispatch('action', {type: 'Create' })" class="btn btn-sm btn-dark">Create</button>
-            </div>
-        </div>
-        <div class="card-body">
+    <div class="" x-data="{openModalView: false, openModalDelete: false}">
 
-            @if(session()->has('alert-message'))
-                @php
-                    $type = session('alert-message')['type'];
-                    $class = $type == 'danger' ? '!text-red-800 !border-red-300 !bg-red-50' : '';
-                @endphp
-                <x-alert message="{{ session('alert-message')['message'] }}" class="{{$class}}" />
-            @endif
+        <div class="card g-base-100 shadow-xl">
+            <div class="card-body">
+                <div class="flex justify-between">
+                    <h2 class="card-title text-6xl font-bold">Countries</h2>
 
-                @if($countries->items() > 0)
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Name</th>
-                                <th>Total Cities</th>
-                                <th>Total Shops</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($countries->items() as $item)
-                                <tr>
-                                    <td>{{ ($countries->currentpage()-1) * $countries->perpage() + $loop->index + 1 }}</td>
-                                    <td>
-                                        <div class="flex gap-2">
-                                            <img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}
-                                        </div>
-                                    </td>
-                                    <td>{{ $item->cities->count() }}</td>
-                                    <td>{{ $item->shops->count() }}</td>
-                                    <td>
-                                        <button
-                                            @click="openModalView = true"
-                                            wire:click="dispatch('modal', { data:{{json_encode($item)}} })" class="btn btn-sm btn-outline-dark"
-                                        >
-                                            show
-                                        </button>
-                                        <button
-                                            wire:click="dispatch('action', {type: 'Edit', data:{{json_encode($item)}} })"
-                                            class="btn btn-sm btn-outline-dark"
-                                        >
-                                            edit
-                                        </button>
-                                        <button
-                                            class="btn btn-sm btn-outline-dark"
-                                            @click="openModalDelete = true"
-                                            wire:click="dispatch('modal', { data:{{json_encode($item)}} })"
-                                        >
-                                            delete
-                                        </button>
-                                    </td>
-                                </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                @else
-                    <div class="flex justify-center">
-                        <img class="w-56" src="{{asset('assets/undraw_no_data.svg')}}" alt="">
+                    <div class="flex justify-end gap-9">
+                        <div class="">
+                            <button wire:click="dispatch('action', {type: 'Create' })" class="btn btn-neutral"><i class="fa-regular fa-plus"></i> Create</button>
+                        </div>
+
+                        <div>
+                            <label class="input input-bordered flex items-center gap-2">
+                                <input type="text" class="grow" placeholder="Search" wire:model.live="search" />
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70"><path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" /></svg>
+                            </label>
+                        </div>
                     </div>
-                @endif
 
-                {{ $countries->links() }}
-        </div>
+                </div>
+
+                @if(session()->has('alert-message'))
+                    @php
+                        $type = session('alert-message')['type'];
+                        $class = $type == 'danger' ? '!text-red-800 !border-red-300 !bg-red-50' : '';
+                    @endphp
+                    <x-alert message="{{ session('alert-message')['message'] }}" class="{{$class}}" />
+                @endif
+              
+
+
+              @if($countries->items() > 0)
+
+              <div class="overflow-x-auto">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th>No</th>
+                              <th>Name</th>
+                              <th>Cities</th>
+                              <th>Shops</th>
+                              <th></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          @foreach ($countries->items() as $item)
+                              <tr class="hover">
+                                  <td>{{ ($countries->currentpage()-1) * $countries->perpage() + $loop->index + 1 }}</td>
+                                  <td>
+                                      <div class="flex gap-2">
+                                          <img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}
+                                      </div>
+                                  </td>
+                                  <td>{{ $item->cities->count() }}</td>
+                                  <td>{{ $item->shops->count() }}</td>
+                                  <td class="flex justify-end gap-2">
+                                      <button
+                                          @click="openModalView = true"
+                                          wire:click="dispatch('modal', { data:{{json_encode($item)}} })" class="btn btn-sm btn-neutral"
+                                      >
+                                        <i class="fa-solid fa-file-lines"></i>
+                                      </button>
+                                      <button
+                                          wire:click="dispatch('action', {type: 'Edit', data:{{json_encode($item)}} })"
+                                          class="btn btn-sm btn-outline"
+                                      >
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                      </button>
+                                      <button
+                                          class="btn btn-sm btn-ghost"
+                                          @click="openModalDelete = true"
+                                          wire:click="dispatch('modal', { data:{{json_encode($item)}} })"
+                                      >
+                                        <i class="fa-solid fa-trash"></i>
+                                      </button>
+                                  </td>
+                              </tr>
+                      @endforeach
+                      </tbody>
+                  </table>
+                  </div>
+  
+  
+              @else
+                  <div class="flex justify-center">
+                      <img class="w-56" src="{{asset('assets/undraw_no_data.svg')}}" alt="">
+                  </div>
+              @endif
+  
+              {{ $countries->links() }}
+
+            </div>
+          </div>
+
 
         <!-- Modal View -->
-        <x-modalAlpine modalName="openModalView" title="Show">
-            <div class="px-2 mt-4 mb-4">
-                <img class="max-w-52" src="{{$country['flag'] ?? ''}}" alt="">
-                <div class="mt-3">
-                    <p>Name: {{$country['name'] ?? ''}}</p>
-                    <p>Created at: {{isset($country['created_at']) ? \Carbon\Carbon::parse($country['created_at'])->diffForHumans() : ''}}</p>
-                    <p>Updated at: {{isset($country['created_at']) ? \Carbon\Carbon::parse($country['created_at'])->diffForHumans() : ''}}</p>
+        <x-modalAlpine modalName="openModalView" title="Show detail data">
+
+              
+              <div class="flex flex-row gap-2">
+                <div class="basis-1/4"><img src="{{$country['flag'] ?? ''}}" class="w-full" /></div>
+                <div class="basis-1/8">
+                    <ul>
+                        <li>
+                            Country Name : <span class="font-bold">{{ $country['name'] ?? '' }}</span>
+                        </li>
+                        <li>
+                            Cities : <span class="font-bold">...</span>
+                        </li>
+                        <li>
+                            Shops : <span class="font-bold">...</span>
+                        </li>
+                    </ul>
                 </div>
-            </div>
+              </div>
+
         </x-modalAlpine>
 
         <!-- Modal Delete -->
-        <x-modalAlpine modalName="openModalDelete" title="Are you sure?">
-            <div class="flex gap-1 items-center mb-4 px-2 mt-4">
-                <img class="max-w-12" src="{{$country['flag'] ?? ''}}" alt="">
-                <p>{{$country['name'] ?? ''}}</p>
+        <x-modalAlpine modalName="openModalDelete" title="Please give your confirmation">
+
+
+            <div class="p-4 text-center">
+                <svg class="mx-auto mb-4 text-gray-700 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-700">Are you sure you want to delete this item?</h3>
+                <button @click="openModalDelete=false" wire:click.prevent="delete({{$country['id'] ?? null}})" data-modal-hide="popup-modal" type="button" class="btn btn-neutral">
+                    Yes, I'm sure
+                </button>
+                <button @click="openModalDelete=false" data-modal-hide="popup-modal" type="button" class="btn btn-error">No, cancel</button>
             </div>
 
-            <hr>
-            <div class="mt-3 flex justify-end gap-2 px-2 mb-4">
-                <button @click="openModalDelete=false" class="bg-gray-500 text-white rounded-md py-1 px-2 text-sm">no, don't do it</button>
-                <button @click="openModalDelete=false" wire:click.prevent="delete({{$country['id'] ?? null}})" class="bg-white text-red-500 hover:!bg-red-500 hover:text-white border-1 border-red-500 rounded-md py-1 px-2 text-sm">yes, delete!</button>
-            </div>
+
         </x-modalAlpine>
     </div>
 </div>
