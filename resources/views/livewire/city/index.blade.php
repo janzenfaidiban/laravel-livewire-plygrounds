@@ -1,7 +1,7 @@
 <div>
-    @if($isForm)
-    <livewire:city.form :cities="$cities" :formType="$formType"/>
+    @if($formType == '')
+    <livewire:city.city-record/>
     @else
-        <livewire:city.city-record/>
+    <livewire:city.form :cities="$cities" :formType="$formType"/>
     @endif
 </div>
