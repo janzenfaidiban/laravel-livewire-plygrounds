@@ -3,12 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-<<<<<<< HEAD
     return redirect('login');
-=======
     // return redirect('laravel/country');
     return view('welcome');
->>>>>>> b165015f56bd591b85752fdd4818a567cd841005
 });
 
 // Laravel Routes
