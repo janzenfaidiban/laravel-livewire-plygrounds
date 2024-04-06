@@ -55,8 +55,6 @@
                         </td>
                     </tr>
 
-
-
                     @include('country.modals.delete')
                     @include('country.modals.show')
                     @empty

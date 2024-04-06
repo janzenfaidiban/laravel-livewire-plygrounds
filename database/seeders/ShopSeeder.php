@@ -15,7 +15,7 @@ class ShopSeeder extends Seeder
     {
         Shop::create([
             'city_id' => 1,
-            'name' => fake()->words(2, true),
+            'name' => fake()->words(3, true),
         ]);
         Shop::create([
             'city_id' => 1,
@@ -24,7 +24,7 @@ class ShopSeeder extends Seeder
         ]);
         Shop::create([
             'city_id' => 2,
-            'name' => fake()->words(2, true),
+            'name' => fake()->words(5, true),
         ]);
         Shop::create([
             'city_id' => 3,
@@ -32,7 +32,7 @@ class ShopSeeder extends Seeder
         ]);
         Shop::create([
             'city_id' => 4,
-            'name' => fake()->words(2, true),
+            'name' => fake()->words(6, true),
         ]);
         Shop::create([
             'city_id' => 2,
