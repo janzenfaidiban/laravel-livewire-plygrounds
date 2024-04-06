@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 // Laravel Routes
-require_once('laravel.php');
+// require_once('laravel.php');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -17,5 +17,6 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })->name('dashboard');
+    })->name('laravel/country');
+    require_once('laravel.php');
 });
