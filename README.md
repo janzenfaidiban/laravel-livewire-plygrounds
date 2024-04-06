@@ -22,6 +22,18 @@ Show Modal
 Delete Modal 
 ![modal-delete](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/f7acd008-4b81-4f19-8d88-4676970b56b6)
 
+## User story
+
+Biasa ditulis oleh project manager yang tulis tapi bisa juga ditulis oleh developer
+
+Aturan dan penjelasan membuat story Point oleh developer
+<ol>
+    <li>estimasi dalam beberapa menit</li>
+    <li>estimasi dalam beberapa jam</li>
+    <li>estimasi dalam 1 hari</li>
+    <li>estimasi dalam beberapa hari</li>
+</ol>
+
 ## 📙 Installation
 
 Cara mendownload project melalui GitHub ke local repository.
