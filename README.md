@@ -44,6 +44,12 @@ Copy file ```.env.example``` dan modifikasi nama database
 cp .env.example .env
 ```
 
+Membuat key baru 
+```
+php artisan key:generate
+```
+
+
 ### Do the migration & seeder
 
 ```
