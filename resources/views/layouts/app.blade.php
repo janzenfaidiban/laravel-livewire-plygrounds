@@ -9,15 +9,22 @@
 </head>
 <body>
 
-    <nav class="container">
-        <div class="row">
-            <div class="col p-5">
-                <a href="{{ route('countries') }}" class="btn @if(Request::segment(2) == 'country') btn-dark @else btn-outline-dark @endif">🗺️ Country </a>
-                <a href="{{ route('cities') }}" class="btn @if(Request::segment(2) == 'city') btn-dark @else btn-outline-dark @endif">🏙️ City</a>
-                <a href="{{ route('shops') }}" class="btn @if(Request::segment(2) == 'shop') btn-dark @else btn-outline-dark @endif">🛍️ Shop</a>
-            </div>
+<nav class="container">
+    <div class="row">
+        <div class="col p-5">
+            <a href="{{ route('countries') }}" class="btn @if(Request::segment(2) == 'country') btn-dark @else btn-outline-dark @endif">🗺️ Country </a>
+            <a href="{{ route('cities') }}" class="btn @if(Request::segment(2) == 'city') btn-dark @else btn-outline-dark @endif">🏙️ City</a>
+            <a href="{{ route('shops') }}" class="btn @if(Request::segment(2) == 'shop') btn-dark @else btn-outline-dark @endif">🛍️ Shop</a>
+            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-outline-dark"> Logout</a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
         </div>
-    </nav>
+     
+    </div>
+</nav>
+
 
     <main>
         <div class="container">
