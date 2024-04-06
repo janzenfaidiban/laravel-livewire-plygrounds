@@ -352,3 +352,16 @@ Install daisyUI:
 ```
 npm i -D daisyui@latest
 ```
+
+## Aturan / cara commit 
+
+Contoh menulis commit sesuai dengan status 
+
+Jika ada pesan atau info baru yang ditambahan atau juga perubahan terbaru di project
+UPDATE: ...
+
+Jika ada error yang sudah diselesaikan atau jika ada error yang perlu dibantu oleh developer lain
+FIX : ...
+
+Jika ada fitur baru yang ditambahkan 
+FEAT : ...
