@@ -1,11 +1,11 @@
 @tailwind base;
 @tailwind components;
-<<<<<<< HEAD
+
 @tailwind utilities;
 
 [x-cloak] {
     display: none;
 }
-=======
+
 @tailwind utilities;
->>>>>>> b165015f56bd591b85752fdd4818a567cd841005
+
