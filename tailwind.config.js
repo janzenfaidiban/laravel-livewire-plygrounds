@@ -10,6 +10,17 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
+<<<<<<< HEAD
+=======
+  theme: {
+    extend: {},
+  },
+  daisyui:{
+    themes:['light']
+  },
+  plugins: [require("daisyui")],
+}
+>>>>>>> b165015f56bd591b85752fdd4818a567cd841005
 
     theme: {
         extend: {

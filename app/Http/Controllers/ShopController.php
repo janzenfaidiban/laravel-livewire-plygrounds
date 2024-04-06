@@ -9,10 +9,22 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class ShopController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $collection = Shop::with('city')->get();
-        return view('shop.index', compact('collection'));
+        $collection =  Shop::with('city','tags')
+        ->when(strlen($request->s) > 0, function ($query) use ($request){
+            $query
+                ->where('name', 'LIKE', "%$request->s%")
+                ->orWhereHas('city',function($city) use ($request){
+                    $city
+                    ->where('name', 'LIKE', "%$request->s%")
+                    ->orWhereHas('country',function($country) use ($request) {
+                        $country->where('name','LIKE',"%$request->s%");
+                    });
+                });
+        })
+        ->get();
+        return view('shop.index', compact('collection','request'));
     }
 
     public function create()
@@ -87,11 +99,25 @@ class ShopController extends Controller
             }
         }
     }
+    public function restore()
+    {
+        //
+    }
+
+    public function distroy()
+    {
+        //
+    }
 
     public function delete($id)
     {
         $item = Shop::find($id);
         $item->delete();
-        return redirect()->back()->with(BootstrapAlerts::addError('Deleted! Data has been deleted'));
+        return redirect()->back()->with(BootstrapAlerts::addSuccess('Deleted! Data has been deleted'));
+    }
+
+     public function forceDelete()
+    {
+        //
     }
 }

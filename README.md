@@ -1,4 +1,4 @@
-# Laravel Playground
+# 💡 Laravel Playground
 
 ## Project Overview
 Project ini dibuat untuk mempelajari dan mendalami pengembangan aplikasi web menggunakan dengan konsep TALLSTACK.
@@ -10,8 +10,17 @@ Dalam satu repository ini terdapat 2 pola pengembangan, yaitu :
 
 ## Project Screenshots
 
-Tampilan halaman Country
-<img src="public/images/country.png">
+Table
+![country](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/965e442f-7cfa-4b2b-80b3-a62932361e67)
+
+Edit
+![country-edit](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/d722bfb2-472c-4597-aa43-cb8ddda6e890)
+
+Show Modal
+![modal](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/4704a612-400b-4feb-9b05-e25f79b9e5f2)
+
+Delete Modal 
+![modal-delete](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/f7acd008-4b81-4f19-8d88-4676970b56b6)
 
 ## 📙 Installation
 
@@ -30,7 +39,10 @@ composer install
 
 ### Setup .env
 
-Copy the ```.env.example``` file
+Copy file ```.env.example``` dan modifikasi nama database
+```
+cp .env.example .env
+```
 
 ### Do the migration & seeder
 
@@ -182,32 +194,42 @@ Folder dan file yang digunakan untuk project livewire
 .
 ├── app
 │   ├── Livewire
-|   |    ├── Country ✅
-|   |    |   ├── index.php ⌛
-│   |    |   └── ...
+|   |    ├── Country ⌛
+|   |    |   ├── Index.php ✅
+│   |    |   └── From.php ✅
+|   |    |   └── CountryRecord.php✅
 |   |    ├── City ⌛
-|   |    |   ├── index.php ⌛
-│   |    |   └── ...
+|   |    |   └── CityRecord.php✅
+|   |    |   ├── form.php ✅
+|   |    |   └── Index.php ✅
 |   |    ├── Shop ⌛
-|   |    |   ├── index.php ⌛
-│   |    |   └── ...
+|   |    |   ├── Index.php ✅
+│   |    |   └── From.php ✅
+|   |    |   └── ShopRecord.php✅
 │   └── ...
 ├── rosources
 │   ├── views
-│   |   ├── components ✅
-|   |   |   ├── layouts ✅
+│   |   ├── components
+|   |   |   ├── layouts ⌛
 |   |   |   |   ├── app.blade.php ⌛
-|   |   |   ├── modalAlpine.blade.php ⌛
+|   |   |   ├── alert.blade.php ✅
+|   |   |   ├── modalAlpine.blade.php ✅
 │   |   ├── livewire
-|   |   |   ├── country ✅
-|   |   |   |   ├── index.blade.php ⌛
 |   |   |   ├── city ⌛
-|   |   |   |   ├── index.blade.php ⌛
+|   |   |   |   ├── city-record.blade.php ✅
+|   |   |   |   ├── form.blade.php ✅
+|   |   |   |   ├── index.blade.php ✅
+|   |   |   ├── country ⌛
+|   |   |   |   ├── form.blade.php ✅
+|   |   |   |   ├── index.blade.php ✅
+|   |   |   |   ├── shop-record.blade.php ✅
 |   |   |   ├── shop ⌛
-|   |   |   |   ├── index.blade.php ⌛
+|   |   |   |   ├── form.blade.php ✅
+|   |   |   |   ├── index.blade.php ✅
+|   |   |   |   ├── shop-record.blade.php ✅
 │   └── ...
 ├── routes
-|   ├── livewire.php ✅
+|   ├── livewire.php ⌛
 └── README.md
 ```
 
@@ -236,8 +258,51 @@ atau
 git push --set-upstream origin <branch-name>
 ```
 
+Menggabungkan perubahan dari branch <b>main</b> ke branch <b>dev-name</b>. 
+Pindah dulu ke branch ```dev-name```
+```
+git checkout dev-name
+```
+Gabungkan perubahan dari branch main menggunakan perintah ```merge```
+```
+git merge main
+```
+Cara untuk menghapus branch
+```
+git branch --delete <branchname>
+```
+
 
 # 📚 LEARNING RESOURCES
+
+## Dokumentasi Livewire
+
+Cara instal livewire lihat di sini
+https://livewire.laravel.com/docs/installation
+
+Install livewire
+```
+composer require livewire/livewire
+```
+
+Publikasi konfigurasi livewire gunakan perintah berikut
+```
+php artisan livewire:publish --config
+```
+
+## Dokumentasi Tailwind CSS
+
+Cara menginstal tailwind css, kunjungi di sini
+https://tailwindcss.com/docs/guides/laravel
+
+
+```
+npm install -D tailwindcss postcss autoprefixer
+```
+
+```
+npx tailwindcss init -p
+```
 
 Videos, articles, and urls from any other platforms you can mention bellow here.
 
@@ -265,3 +330,19 @@ Source : https://github.com/eelcol/laravel-bootstrap-alerts
 
 Tutorial video by Laravel Daily
 https://youtu.be/5s-_SnVl-1g?si=rz_TAErEmOtUR2JS
+
+
+## Perbedaan hasMany dan belongsToMany Eloquent Laravel
+
+Tutorial untuk memahami pembuatan relasi pada project laravel
+https://medium.com/@barutahucoding/perbedaan-hasmany-dan-belongstomany-eloquent-laravel-6236238f243e
+
+## Daisy UI for Tailwind CSS
+
+Learn from documentation
+https://daisyui.com/docs
+
+Install daisyUI:
+```
+npm i -D daisyui@latest
+```

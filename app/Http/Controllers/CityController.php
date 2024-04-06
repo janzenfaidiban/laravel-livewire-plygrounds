@@ -11,10 +11,16 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class CityController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $collection = City::with('country', 'shops')->get();
-        return view('city.index', compact('collection'));
+        $collection = City::with('country', 'shops') ->when(strlen($request->s) > 0, function ($query) use ($request){
+            $query->where('name', 'LIKE', "%$request->s%")
+            ->where('name', 'LIKE', "%$request->s%")
+            ->orWhereHas('country',function($country) use ($request) {
+                $country->where('name','LIKE',"%$request->s%");
+            });
+        })->get();
+        return view('city.index', compact('collection','request'));
     }
 
     public function shops()
@@ -105,10 +111,25 @@ class CityController extends Controller
         }
     }
 
+    public function distroy()
+    {
+        // 
+    }
+
+    public function restore()
+    {
+        // 
+    }
+
     public function delete($id)
     {
         $item = City::find($id);
         $item->delete();
-        return redirect()->back()->with(BootstrapAlerts::addError('Deleted! Data has been deleted'));
+        return redirect()->back()->with(BootstrapAlerts::addSuccess('Deleted! Data has been deleted'));
+    }
+
+    public function forceDelete()
+    {
+        // 
     }
 }

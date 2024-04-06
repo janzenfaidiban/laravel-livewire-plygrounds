@@ -10,7 +10,7 @@
                 <h1 class="h3">Edit City</h1>
             </div>
             <div class="col text-end">
-                <a href="{{ route('city') }}" class="btn btn-sm btn-dark">Back</a>
+                <a href="{{ route('cities') }}" class="btn btn-sm btn-dark">Back</a>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
 
         {!! display_bootstrap_alerts() !!}
         
-        {!! Form::open(['route' => ['city.update', $item->id], 'method' => 'post']) !!}
+        {!! Form::open(['route' => ['cities.update', $item->id], 'method' => 'post']) !!}
         @csrf @method('PUT')
 
             <div class="form-group mb-3">

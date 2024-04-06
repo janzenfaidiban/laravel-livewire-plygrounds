@@ -2,57 +2,47 @@
 
 namespace App\Livewire\Country;
 
-use App\Models\Country;
-use Illuminate\Support\Str;
+use Illuminate\View\View;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 
 class Index extends Component
 {
-    public $collection = [];
-    public $id, $name, $flag;
+    public $formType = '';
 
-    #[On('edit-country')]
-    public function handleDisplayEditCountry($data): void
+    #[Url]
+    public $id = '';
+
+    protected function queryString(): array
     {
-        $this->id = $data['id'];
-        $this->name = $data['name'];
-        $this->flag = $data['flag'];
+        return [
+            'formType' => [
+                'as' => 'form',
+            ]
+        ];
     }
 
-    public function edit(): void
+    public $country = [];
+
+    #[On('action')]
+    public function action($type, $data=[]): void
     {
-        $country = Country::find($this->id);
-        $country->name = $this->name;
-        $country->flag = $this->flag;
-        $country->save();
+        $this->formType = $type;
+        $this->id = $data['id'] ?? '';
+        $this->country = $data;
     }
 
-    public function create(): void
+    #[On('clear')]
+    public function clear($message=null): void
     {
-        $slug = Str::slug($this->name, '-');
-        Country::query()->create([
-            'name' => $this->name,
-            'slug' => $slug,
-            'flag' => $this->flag
-        ]);
+        $this->formType = '';
+        $this->id = '';
+        if($message) session()->flash('alert-message', $message);
     }
 
-    public function delete($id): void
+    public function render(): View
     {
-        $country = Country::query()->find($id);
-        $country->delete();
-    }
-
-    public function clear(): void
-    {
-        $this->name = '';
-        $this->flag = '';
-    }
-
-    public function render()
-    {
-        $this->collection = Country::with('shops', 'cities')->get();
         return view('livewire.country.index');
     }
 }

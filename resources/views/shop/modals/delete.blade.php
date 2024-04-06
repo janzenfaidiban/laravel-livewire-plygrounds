@@ -10,8 +10,8 @@
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">no, don't do it</button>
-        {!! Form::open(['route' => ['shop.delete', $item->id]]) !!} 
-            @csrf @method('DELETE') 
+        {!! Form::open(['route' => ['shops.delete', $item->id]]) !!}
+            @csrf @method('DELETE')
             {!! Form::submit('yes, delete!', array('class' => 'btn btn-sm btn-outline-danger' )) !!}
         {!! Form::close() !!}
         </div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="card mb-4" x-data="{openModalEdit: false, openModalCreate: false}">
     <div class="card-header">
         <h1 class="h3">Countries</h1>
@@ -82,4 +83,12 @@
             <button type="submit" x-on:click="openModalCreate=false" class="mt-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
         </form>
     </x-modalAlpine>
+=======
+<div>
+    @if($formType == '')
+        <livewire:country.country-record/>
+    @else
+        <livewire:country.form :country="$country" :formType="$formType"/>
+    @endif
+>>>>>>> b165015f56bd591b85752fdd4818a567cd841005
 </div>

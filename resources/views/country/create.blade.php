@@ -10,7 +10,7 @@
                 <h1 class="h3">Create Country</h1>
             </div>
             <div class="col text-end">
-                <a href="{{ route('country') }}" class="btn btn-sm btn-dark">Back</a>
+                <a href="{{ route('countries') }}" class="btn btn-sm btn-dark">Back</a>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
 
         {!! display_bootstrap_alerts() !!}
         
-        {!! Form::open(['route' => 'country.store', 'method' => 'post']) !!}
+        {!! Form::open(['route' => 'countries.store', 'method' => 'post']) !!}
 
             <div class="form-group mb-3">
                 {!! Form::label('name', 'Name', array('class' => 'form-label'))  !!}
