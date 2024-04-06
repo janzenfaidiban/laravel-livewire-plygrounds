@@ -9,10 +9,11 @@
         "eelcol/laravel-bootstrap-alerts": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
+        "laravel/jetstream": "^4.3",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "laravelcollective/html": "^6.4",
-        "livewire/livewire": "^3.4"
+        "livewire/livewire": "^3.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.12",
