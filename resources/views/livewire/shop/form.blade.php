@@ -45,7 +45,7 @@
                 </label>
 
                 <div class="form-control mt-4">
-                    <x-input-tags :tags="$tags" event="tagsAdded" />
+                    <x-input-tags :tags="$tags" event="tagsAdded" :shopTags="$shopTags" />
                 </div>
 
                 <div class="mt-4">
