@@ -7,13 +7,13 @@
                 <div class="flex justify-between">
                     <!-- card-title -->
                     <h2 class="card-title text-6xl font-bold">Countries</h2>
-                    
+
                     <div class="flex justify-end gap-9">
                         <!-- create button -->
                         <div>
                             <button wire:click="dispatch('action', {type: 'Create' })" class="btn btn-neutral"><i class="fa-regular fa-plus"></i> Create</button>
                         </div>
-                        
+
                         <!-- search input -->
                         <div>
                             <label class="input input-bordered flex items-center gap-2">
@@ -83,13 +83,13 @@
                             </tbody>
                         </table>
                     </div>
-    
+
                 @else
                     <div class="flex justify-center">
                         <img class="w-56" src="{{ asset('assets/undraw_no_data.svg') }} " alt="undraw_no_data.svg">
                     </div>
                 @endif
-    
+
                 {{ $countries->links() }}
 
             </div> <!-- card-body end -->
@@ -97,7 +97,7 @@
 
         <!-- Modal Show -->
         <x-modalAlpine modalName="openModalView" title="Show detail data">
-            <div class="flex flex-row gap-2">
+            <div class="flex flex-row gap-2 p-6">
                 <div class="basis-1/4"><img src="{{$country['flag'] ?? ''}}" class="w-full" /></div>
                 <div class="basis-1/8">
                     <ul>
@@ -105,10 +105,10 @@
                             Country Name : <span class="font-bold">{{ $country['name'] ?? '' }}</span>
                         </li>
                         <li>
-                            🛍️ Cities : <span class="font-bold">...</span>
+                            🛍️ Cities : <span class="font-bold">{{ count($country['cities'] ?? []) }}</span>
                         </li>
                         <li>
-                            🏙️ Shops : <span class="font-bold">...</span>
+                            🏙️ Shops : <span class="font-bold">{{ count($country['shops'] ?? []) }}</span>
                         </li>
                     </ul>
                 </div>
