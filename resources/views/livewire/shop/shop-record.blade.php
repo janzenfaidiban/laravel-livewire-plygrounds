@@ -5,13 +5,13 @@
                 <div class="flex justify-between">
                     <!-- card-title -->
                     <h2 class="card-title text-6xl font-bold">Shops</h2>
-                    
+
                     <div class="flex justify-end gap-9">
                         <!-- create button -->
                         <div>
                             <button wire:click="dispatch('action', { value: {{json_encode(true)}}, type: 'Create' })" class="btn btn-neutral"><i class="fa-regular fa-plus"></i> Create</button>
                         </div>
-                        
+
                         <!-- search input -->
                         <div>
                             <label class="input input-bordered flex items-center gap-2">
@@ -22,7 +22,7 @@
                     </div> <!-- flex end -->
 
                 </div> <!-- flex end -->
-                
+
 
                 @if(session()->has('alert-message'))
                     @php
@@ -52,14 +52,13 @@
                                     <td>{{ $item->id }}</td>
                                     <td>🛍️ {{ $item->name }}</td>
                                     <td class="flex gap-2">
-                                        
+
                                             @php
-                                                $item->tags()->each(function ($tag, $i){
-                                                    // echo $i>0 ? ', ' : '';
+                                                $item->tags()->each(function ($tag){
                                                     echo '<a href="" class="btn btn-sm">'.$tag->name.'</a>';
                                                 });
                                             @endphp
-                                        
+
                                     </td>
                                     <td>🏙️ {{ $item->city->name }}</td>
                                     <td>
@@ -75,7 +74,7 @@
                                             <i class="fa-solid fa-file-lines"></i>
                                         </button>
                                         <button
-                                            wire:click="dispatch('action', { value: {{json_encode(true)}}, type: 'Edit', data:{{json_encode($item)}} })"
+                                            wire:click="dispatch('action', {type: 'Edit', data:{{json_encode($item)}} })"
                                             class="btn btn-sm btn-outline"
                                         >
                                             <i class="fa-solid fa-pen-to-square"></i>
