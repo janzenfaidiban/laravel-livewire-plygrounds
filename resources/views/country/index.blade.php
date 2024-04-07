@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('main')
+<x-app-layout>
     <form class="">
         <div class="row d-flex justify-content-end">
             <div class="col-6">
@@ -73,5 +72,4 @@
             </table>
         </div>
     </div>
-
-@stop
+</x-app-layout>
