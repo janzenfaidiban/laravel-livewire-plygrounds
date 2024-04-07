@@ -4,19 +4,32 @@ namespace App\Livewire\City;
 
 use Livewire\Component;
 use Livewire\Attributes\On;
-use App\Models\City;
+use Livewire\Attributes\Url;
 
 class Index extends Component
 {
 
-    public $isForm = false;
+    // public $isForm = false;
     public $formType = '';
+
+    #[Url]
+    public $id = '';
+
+    protected function queryString(): array
+    {
+        return [
+            'formType' => [
+                'as' => 'form',
+            ]
+        ];
+    }
+
     public $cities = [];
 
     #[On('action')]
-    public function action($value, $type, $data=[]): void
+    public function action($type, $data=[]): void
     {
-        $this->isForm = $value;
+        $this->formType = $type;
         $this->formType = $type;
         $this->cities = $data;
     }
@@ -24,7 +37,8 @@ class Index extends Component
     #[On('clear')]
     public function clear($message=null): void
     {
-        $this->isForm = false;
+        $this->formType = '';
+        $this->id = '';
         if($message) session()->flash('alert-message', $message);
     }
 

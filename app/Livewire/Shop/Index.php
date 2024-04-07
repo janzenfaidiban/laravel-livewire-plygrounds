@@ -4,19 +4,30 @@ namespace App\Livewire\Shop;
 
 use Livewire\Component;
 use Livewire\Attributes\On;
-use App\Models\Shop;
+use Livewire\Attributes\Url;
 
 class Index extends Component
 {
-
-    public $isForm = false;
     public $formType = '';
+
+    #[Url]
+    public $id = '';
+
+    protected function queryString(): array
+    {
+        return [
+            'formType' => [
+                'as' => 'form',
+            ]
+        ];
+    }
+
     public $shops = [];
 
     #[On('action')]
     public function action($value, $type, $data=[]): void
     {
-        $this->isForm = $value;
+        $this->formType = $type;
         $this->formType = $type;
         $this->shops = $data;
     }
@@ -24,7 +35,8 @@ class Index extends Component
     #[On('clear')]
     public function clear($message=null): void
     {
-        $this->isForm = false;
+        $this->formType = '';
+        $this->id = '';
         if($message) session()->flash('alert-message', $message);
     }
 

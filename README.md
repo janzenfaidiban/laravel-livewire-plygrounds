@@ -10,8 +10,29 @@ Dalam satu repository ini terdapat 2 pola pengembangan, yaitu :
 
 ## Project Screenshots
 
-Tampilan halaman Country
-<img src="public/images/country.png">
+Table
+![country](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/965e442f-7cfa-4b2b-80b3-a62932361e67)
+
+Edit
+![country-edit](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/d722bfb2-472c-4597-aa43-cb8ddda6e890)
+
+Show Modal
+![modal](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/4704a612-400b-4feb-9b05-e25f79b9e5f2)
+
+Delete Modal 
+![modal-delete](https://github.com/janzenfaidiban/laravel-livewire-plygrounds/assets/45115034/f7acd008-4b81-4f19-8d88-4676970b56b6)
+
+## User story
+
+Biasa ditulis oleh project manager yang tulis tapi bisa juga ditulis oleh developer
+
+Aturan dan penjelasan membuat story Point oleh developer
+<ol>
+    <li>estimasi dalam beberapa menit</li>
+    <li>estimasi dalam beberapa jam</li>
+    <li>estimasi dalam 1 hari</li>
+    <li>estimasi dalam beberapa hari</li>
+</ol>
 
 ## 📙 Installation
 
@@ -34,6 +55,12 @@ Copy file ```.env.example``` dan modifikasi nama database
 ```
 cp .env.example .env
 ```
+
+Membuat key baru 
+```
+php artisan key:generate
+```
+
 
 ### Do the migration & seeder
 
@@ -327,3 +354,26 @@ https://youtu.be/5s-_SnVl-1g?si=rz_TAErEmOtUR2JS
 
 Tutorial untuk memahami pembuatan relasi pada project laravel
 https://medium.com/@barutahucoding/perbedaan-hasmany-dan-belongstomany-eloquent-laravel-6236238f243e
+
+## Daisy UI for Tailwind CSS
+
+Learn from documentation
+https://daisyui.com/docs
+
+Install daisyUI:
+```
+npm i -D daisyui@latest
+```
+
+## Aturan / cara commit 
+
+Contoh menulis commit sesuai dengan status 
+
+Jika ada pesan atau info baru yang ditambahan atau juga perubahan terbaru di project
+UPDATE: ...
+
+Jika ada error yang sudah diselesaikan atau jika ada error yang perlu dibantu oleh developer lain
+FIX : ...
+
+Jika ada fitur baru yang ditambahkan 
+FEAT : ...
