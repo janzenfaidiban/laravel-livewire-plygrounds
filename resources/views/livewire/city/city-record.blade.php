@@ -6,13 +6,13 @@
                 <div class="flex justify-between">
                     <!-- card-title -->
                     <h2 class="card-title text-6xl font-bold">Cities</h2>
-                    
+
                     <div class="flex justify-end gap-9">
                         <!-- create button -->
                         <div>
                             <button wire:click="dispatch('action', { value: {{json_encode(true)}}, type: 'Create' })" class="btn btn-neutral"><i class="fa-regular fa-plus"></i> Create</button>
                         </div>
-                        
+
                         <!-- search input -->
                         <div>
                             <label class="input input-bordered flex items-center gap-2">
@@ -97,8 +97,8 @@
 
         <!-- Modal Show -->
         <x-modalAlpine modalName="openModalView" title="Show detail data">
-            <div class="flex flex-row gap-2">
-                <div class="basis-1/4"><img src="{{$country['flag'] ?? ''}}" class="w-full" /></div>
+            <div class="flex flex-row gap-2 p-6">
+                <div class="basis-1/4"><img src="{{$city['country']['flag'] ?? ''}}" class="w-full" /></div>
                 <div class="basis-1/8">
                     <ul>
                         <li>
@@ -108,7 +108,7 @@
                             Country : <span class="font-bold">{{ $city['country']['name'] ?? ''}}</span>
                         </li>
                         <li>
-                            Shops : <span class="font-bold">{{ $city['shop']['count'] ?? ''}}</span>
+                            Shops : <span class="font-bold">{{ count($city['shops'] ?? [])}}</span>
                         </li>
                     </ul>
                 </div>
