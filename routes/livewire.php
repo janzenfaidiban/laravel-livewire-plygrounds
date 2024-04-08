@@ -9,9 +9,10 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::prefix('livewire')->name('livewire.')->group(function () {
-        Route::get('/countries', Country::class)->name('countries');
-        Route::get('/cities', City::class)->name('cities');
-        Route::get('/shops', Shop::class)->name('shops');
+    Route::prefix('livewire')->group(function () {
+        Route::get('/', Country::class)->name('livewire');
+        Route::get('/countries', Country::class)->name('livewire.countries');
+        Route::get('/cities', City::class)->name('livewire.cities');
+        Route::get('/shops', Shop::class)->name('livewire.shops');
     });
 });

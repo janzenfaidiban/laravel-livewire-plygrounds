@@ -14,6 +14,7 @@ Route::prefix('laravel')->group(function () {
 
     Route::controller(CountryController::class)->group(function(){
 
+        Route::get('/','index')->name('laravel');
         Route::get('countries','index')->name('countries');
         Route::get('countries/create','create')->name('countries.create');
         Route::get('countries/{id}/show','show')->name('countries.show');
