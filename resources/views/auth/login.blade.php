@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <x-application-logo />
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -16,30 +16,23 @@
             @csrf
 
             <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email') ?? 'adminmaster@sacode.web.id'" required autofocus autocomplete="username" />
+                <x-label for="email" value="{{ __('Email') }}" class="mb-3" />
+                <x-input id="email" class="input input-bordered w-full max-w-xs" type="email" name="email" :value="old('email') ?? 'adminmaster@sacode.web.id'" required autofocus autocomplete="username" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" :value="old('password') ?? 'adminmaster@sacode.web.id'" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
+                <x-label for="password" value="{{ __('Password') }}" class="mb-3" />
+                <x-input id="password" class="input input-bordered w-full max-w-xs" type="password" name="password" :value="old('password') ?? 'adminmaster@sacode.web.id'" required autocomplete="current-password" />
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
 
-                <x-button class="ms-4">
+                <x-button class="btn btn-neutral">
                     {{ __('Log in') }}
                 </x-button>
             </div>
