@@ -15,25 +15,25 @@ Route::prefix('laravel')->group(function () {
     Route::controller(CountryController::class)->group(function(){
 
         Route::get('/','index')->name('laravel');
-        Route::get('countries','index')->name('countries');
-        Route::get('countries/create','create')->name('countries.create');
-        Route::get('countries/{id}/show','show')->name('countries.show');
-        Route::get('countries/{id}/edit','edit')->name('countries.edit');
+        Route::get('countries','index')->name('laravel.countries');
+        Route::get('countries/create','create')->name('laravel.countries.create');
+        Route::get('countries/{id}/show','show')->name('laravel.countries.show');
+        Route::get('countries/{id}/edit','edit')->name('laravel.countries.edit');
 
-        Route::post('countries/store','store')->name('countries.store');
-        Route::put('countries/{id}/update','update')->name('countries.update');
+        Route::post('countries/store','store')->name('laravel.countries.store');
+        Route::put('countries/{id}/update','update')->name('laravel.countries.update');
         // distroy
-        Route::delete('countries/{id}/distroy','distroy')->name('countries.distroy');
+        Route::delete('countries/{id}/distroy','distroy')->name('laravel.countries.distroy');
         // restore
-        Route::post('countries/{id}/restore','restore')->name('countries.restore');
+        Route::post('countries/{id}/restore','restore')->name('laravel.countries.restore');
         // delete
-        Route::delete('countries/{id}/delete','delete')->name('countries.delete');
+        Route::delete('countries/{id}/delete','delete')->name('laravel.countries.delete');
 
     });
 
     Route::controller(CityController::class)->group(function(){
 
-        Route::get('cities','index')->name('cities');
+        Route::get('cities','index')->name('laravel.cities');
         Route::get('cities/create','create')->name('cities.create');
         Route::get('cities/{id}/show','show')->name('cities.show');
         Route::get('cities/{id}/edit','edit')->name('cities.edit');
@@ -52,7 +52,7 @@ Route::prefix('laravel')->group(function () {
 
     Route::controller(ShopController::class)->group(function(){
 
-        Route::get('shops','index')->name('shops');
+        Route::get('shops','index')->name('laravel.shops');
         Route::get('shops/create','create')->name('shops.create');
         Route::get('shops/{id}/show','show')->name('shops.show');
         Route::get('shops/{id}/edit','edit')->name('shops.edit');
