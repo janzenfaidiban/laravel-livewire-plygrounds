@@ -54,7 +54,7 @@ class CountryController extends Controller
 
                 $data->save();
 
-                return redirect()->route('countries')->with(BootstrapAlerts::addSuccess('Success! Data has been created'));
+                return redirect()->route('laravel.countries')->with(BootstrapAlerts::addSuccess('Success! Data has been created'));
 
             } catch (\Throwable $th) {
                 return redirect()->back()->with(BootstrapAlerts::addError('Failed! Data can not be created'));
@@ -91,7 +91,7 @@ class CountryController extends Controller
 
                 $data->update();
 
-                return redirect()->route('countries')->with(BootstrapAlerts::addSuccess('Success! Data has been updated'));
+                return redirect()->route('laravel.countries')->with(BootstrapAlerts::addSuccess('Success! Data has been updated'));
 
             } catch (\Throwable $th) {
                 return redirect()->back()->with(BootstrapAlerts::addError('Failed! Data can not be updated'));

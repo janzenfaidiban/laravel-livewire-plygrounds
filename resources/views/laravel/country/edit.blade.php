@@ -1,4 +1,3 @@
-
 <x-app-layout>
 <div class="card g-base-100 shadow-xl">
     <div class="card g-base-100 shadow-xl">
@@ -7,13 +6,13 @@
             <div class="flex justify-between mb-9">
                 <h2 class="card-title text-6xl font-bold">Edit Country</h2>
                 <div>
-                    <a href="{{ route('countries') }}" class="btn btn-outline"><i class="fa-solid fa-arrow-left-long"></i> Back</a>
+                    <a href="{{ route('laravel.countries') }}" class="btn btn-outline"><i class="fa-solid fa-arrow-left-long"></i> Back</a>
                 </div>
             </div>
 
             {!! display_bootstrap_alerts() !!}
             
-            {!! Form::open(['route' => ['countries.update', $item->id], 'method' => 'post']) !!}
+            {!! Form::open(['route' => ['laravel.countries.update', $item->id], 'method' => 'post']) !!}
             @csrf @method('PUT')
 
 

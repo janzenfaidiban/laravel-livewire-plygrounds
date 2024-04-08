@@ -26,7 +26,7 @@
       <nav class="container mx-auto px-4 ">
         <ul class="menu bg-gray-100 lg:menu-horizontal rounded-box">
           <li class="">
-            <a href="{{ route('livewire.countries') }}"
+            <a href="{{ route('laravel.countries') }}"
               class="hover:bg-gray-50 @if(Request::segment(2) == 'countries') active @endif">
               <i class="fa-solid fa-flag"></i>
               Countries
@@ -34,7 +34,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('livewire.cities') }}"
+            <a href="{{ route('laravel.cities') }}"
               class="hover:bg-gray-50 @if(Request::segment(2) == 'cities') active @endif">
               <i class="fa-solid fa-city"></i>
               Cities
@@ -42,7 +42,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('livewire.shops') }}"
+            <a href="{{ route('laravel.shops') }}"
               class="hover:bg-gray-50 @if(Request::segment(2) == 'shops') active @endif">
               <i class="fa-solid fa-cart-shopping"></i>
               Shops

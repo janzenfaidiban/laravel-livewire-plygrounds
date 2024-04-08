@@ -9,7 +9,7 @@
                 <div class="flex justify-end gap-9">
                     <!-- create button -->
                     <div>
-                        <a href="{{ route('countries.create') }}" class="btn btn-neutral"><i class="fa-regular fa-plus"></i> Create</a>
+                        <a href="{{ route('laravel.countries.create') }}" class="btn btn-neutral"><i class="fa-regular fa-plus"></i> Create</a>
                     </div>
 
                     <!-- search input -->
@@ -23,6 +23,7 @@
 
             </div> <!-- flex end -->
 
+            {!! display_bootstrap_alerts() !!}
 
             <div class="overflow-x-auto">
                 <table class="table">
@@ -48,7 +49,7 @@
                             <td>🏙️ {{ $item->shops->count() }}</td>
                             <td class="flex justify-end gap-2">
                                 <a href="#"  class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#showModal{{$item->id}}" role="button"><i class="fa-solid fa-file-lines"></i></a>
-                                <a href="{{ route('countries.edit', $item->id) }}" class="btn btn-sm btn-outline"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="{{ route('laravel.countries.edit', $item->id) }}" class="btn btn-sm btn-outline"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <a href="#" class="btn btn-sm btn-ghost" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
