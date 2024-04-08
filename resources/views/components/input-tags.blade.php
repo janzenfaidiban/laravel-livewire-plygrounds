@@ -1,4 +1,4 @@
-@props(['tags', 'event' => ''])
+@props(['tags', 'event' => '', 'shopTags' => []])
 <div>
     <label for="">Tags</label>
     <div
@@ -6,7 +6,7 @@
         x-data="{
                     search: '',
                     data: @js($tags),
-                    tagsAdded: [],
+                    tagsAdded: @js($shopTags ?? []),
                     isTagsOpen: false,
                     searchResults(){
                         return this.data.filter(
@@ -26,6 +26,7 @@
                         const index = this.tagsAdded.indexOf(item);
                         if (index > -1) {
                           this.tagsAdded.splice(index, 1);
+                          $wire.dispatch(@js($event), { data: this.tagsAdded });
                         }
                     }
                 }"

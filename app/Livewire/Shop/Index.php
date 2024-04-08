@@ -25,9 +25,9 @@ class Index extends Component
     public $shops = [];
 
     #[On('action')]
-    public function action($value, $type, $data=[]): void
+    public function action($type, $data=[]): void
     {
-        $this->formType = $type;
+        $this->id = $data['id'] ?? '';
         $this->formType = $type;
         $this->shops = $data;
     }
