@@ -27,34 +27,35 @@
             <div class="overflow-x-auto">
                 <table class="table">
                     <thead>
-                    <tr>
-                        <th>no</th>
-                        <th>name</th>
-                        <th>cities</th>
-                        <th>shops</th>
-                        <th>updated_at</th>
-                        <th>created_at</th>
-                        <th></th>
-                    </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Cities</th>
+                            <th>Shops</th>
+                            <th></th>
+                        </tr>
                     </thead>
                     <tbody>
                         @forelse ($collection as $item )
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td><img src="@empty($item->flag) https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/800px-Flag_of_Indonesia.svg.png @else {{ $item->flag }} @endempty" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}</td>
-                            <td>{{ $item->cities->count() }}</td>
-                            <td>{{ $item->shops->count() }}</td>
-                            <td>{{ $item->updated_at }}</td>
-                            <td>{{ $item->created_at }}</td>
-                            <td class="d-flex gap-2">
-                                <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showModal{{$item->id}}" role="button">show</a>
-                                <a href="{{ route('countries.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
-                                <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button">delete</a>
+                            <td>
+                                <div class="flex gap-2">
+                                    <img src="{{ $item->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->name }}
+                                </div>
+                            </td>
+                            <td>🛍️ {{ $item->cities->count() }}</td>
+                            <td>🏙️ {{ $item->shops->count() }}</td>
+                            <td class="flex justify-end gap-2">
+                                <a href="#"  class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#showModal{{$item->id}}" role="button"><i class="fa-solid fa-file-lines"></i></a>
+                                <a href="{{ route('countries.edit', $item->id) }}" class="btn btn-sm btn-outline"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="#" class="btn btn-sm btn-ghost" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
     
                         @include('laravel.country.modals.delete')
                         @include('laravel.country.modals.show')
+                        
                         @empty
                         <tr>
                             <td colspan="7" class="text-center">
@@ -67,9 +68,13 @@
     
     
                         @endforelse
+
                     </tbody>
                 </table>
             </div>
+
+            {{ $collection->links() }}
+
         </div>
     </div>
 

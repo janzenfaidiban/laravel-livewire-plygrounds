@@ -15,7 +15,7 @@ class CountryController extends Controller
         ->when(strlen($request->s) > 0, function ($query) use ($request){
             $query->where('name', 'LIKE', "%$request->s%");
         })
-        ->get();
+        ->paginate(5);
         return view('laravel.country.index', compact('collection','request'));
     }
 
