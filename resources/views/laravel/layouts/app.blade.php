@@ -86,6 +86,10 @@
               <a href="https://github.com/janzenfaidiban/laravel-livewire-plygrounds/graphs/contributors"
                 target="_blank" class="hover:underline me-4 md:me-6">Contributors</a>
             </li>
+            <li>
+              <a href="https://github.com/orgs/sacodeofficial/projects/6"
+                target="_blank" class="hover:underline me-4 md:me-6">Project Management</a>
+            </li>
           </ul>
         </div>
       </footer>
