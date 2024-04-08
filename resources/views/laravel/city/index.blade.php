@@ -54,8 +54,8 @@
                             <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button">delete</a>
                         </td>
 
-                        @include('city.modals.delete')
-                        @include('city.modals.show')
+                        @include('laravel.city.modals.delete')
+                        @include('laravel.city.modals.show')
                     </tr>
 
                 @empty

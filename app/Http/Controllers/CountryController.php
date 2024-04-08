@@ -15,19 +15,19 @@ class CountryController extends Controller
         ->when(strlen($request->s) > 0, function ($query) use ($request){
             $query->where('name', 'LIKE', "%$request->s%");
         })
-        ->get();
-        return view('country.index', compact('collection','request'));
+        ->paginate(5);
+        return view('laravel.country.index', compact('collection','request'));
     }
 
     public function show($id)
     {
         $item = Country::where('id', $id)->first();
-        return view('country.show', compact('item'));
+        return view('laravel.country.show', compact('item'));
     }
 
     public function create()
     {
-        return view('country.create');
+        return view('laravel.country.create');
     }
 
     public function store(Request $request)
@@ -65,7 +65,7 @@ class CountryController extends Controller
     public function edit($id)
     {
         $item = Country::find($id);
-        return view('countries.edit', compact('item'));
+        return view('laravel.country.edit', compact('item'));
     }
 
     public function update(Request $request, $id)

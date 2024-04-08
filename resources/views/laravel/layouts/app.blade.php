@@ -22,6 +22,7 @@
         </div>
       </div>
 
+      @if(Request::segment(1) != 'dashboard')
       <nav class="container mx-auto px-4 ">
         <ul class="menu bg-gray-100 lg:menu-horizontal rounded-box">
           <li class="">
@@ -59,6 +60,7 @@
           </li>
         </ul>
       </nav>
+      @endif
 
       <main class="container mx-auto px-4">
         {{ $slot }}
