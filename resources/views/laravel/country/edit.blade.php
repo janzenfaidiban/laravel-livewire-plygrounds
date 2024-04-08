@@ -11,10 +11,10 @@
                 </div>
             </div>
 
-        {!! display_bootstrap_alerts() !!}
-        
-        {!! Form::open(['route' => ['countries.update', $item->id], 'method' => 'post']) !!}
-        @csrf @method('PUT')
+            {!! display_bootstrap_alerts() !!}
+            
+            {!! Form::open(['route' => ['countries.update', $item->id], 'method' => 'post']) !!}
+            @csrf @method('PUT')
 
 
             <label class="input input-bordered flex items-center gap-2 mb-5">
