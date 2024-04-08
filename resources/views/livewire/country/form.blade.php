@@ -5,7 +5,7 @@
             <div class="flex justify-between mb-9">
                 <h2 class="card-title text-6xl font-bold">{{$formType}} Country</h2>
                 <div>
-                    <button wire:click="dispatch('clear')" class="btn btn-outline"><i class="fa-solid fa-arrow-left-long"></i> Back</button>
+                    <a wire:click="dispatch('clear')" class="btn btn-outline"><i class="fa-solid fa-arrow-left-long"></i> Back</a>
                 </div>
             </div>
 

@@ -1,58 +1,54 @@
 
 <x-app-layout>
-<div class="card mb-4">
-    <div class="card-header">
-        <div class="row">
-            <div class="col">
-                <h1 class="h3">Edit Country</h1>
+<div class="card g-base-100 shadow-xl">
+    <div class="card g-base-100 shadow-xl">
+        <div class="card-body">
+
+            <div class="flex justify-between mb-9">
+                <h2 class="card-title text-6xl font-bold">Edit Country</h2>
+                <div>
+                    <a href="{{ route('countries') }}" class="btn btn-outline"><i class="fa-solid fa-arrow-left-long"></i> Back</a>
+                </div>
             </div>
-            <div class="col text-end">
-                <a href="{{ route('countries') }}" class="btn btn-sm btn-dark">Back</a>
-            </div>
-        </div>
-    </div>
-    <div class="card-body">
 
         {!! display_bootstrap_alerts() !!}
         
         {!! Form::open(['route' => ['countries.update', $item->id], 'method' => 'post']) !!}
         @csrf @method('PUT')
 
-            <div class="form-group mb-3">
-                {!! Form::label('name', 'Name', array('class' => 'form-label'))  !!}
-                {!! Form::text('name', $item->name ?? old('name'), 
-                        [
-                            'class' => 'form-control', 
-                            'placeholder' => 'country name'
-                        ]
-                    ) 
-                !!}
-                <small class="text-muted fst-italic">
-                    <code>United States</code>
-                </small>
-            </div> <!-- form-group end -->
 
-            <div class="form-group mb-3">
-                {!! Form::label('flag', 'Flag Url', array('class' => 'form-label'))  !!}
-                {!! Form::text('flag',  $item->flag ?? old('flag'), 
+            <label class="input input-bordered flex items-center gap-2 mb-5">
+                Country Name :
+                {!! Form::text('name', $item->name ?? old('name'),
                         [
-                            'class' => 'form-control', 
-                            'placeholder' => 'country flag url'
+                            'class' => 'grow',
+                            'placeholder' => 'United States'
                         ]
-                    ) 
+                    )
                 !!}
-                <small class="text-muted fst-italic">
-                    <small class="d-block">Example for testing:</small>
-                    <code class="text-secondary">https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg</code>
-                </small>
-            </div> <!-- form-group end -->
+            </label> <!-- form-group end -->           
 
-            <div class="form-group mb-3">
-                {!! Form::submit('submit', array( 'class' => 'btn btn-dark' )) !!}
-                {!! Form::reset('reset', array( 'class' => 'btn btn-outline-dark' )) !!}
+            <div class="input input-bordered flex items-center gap-2">
+                Flag :
+                {!! Form::text('flag', $item->flag ?? old('flag'),
+                          array(
+                            'class' => 'grow',
+                            'placeholder' => 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg',
+                        ))
+                !!}
+            </div> <!-- form-group end -->
+            <small class="text-muted fst-italic block">
+                <i>
+                    <code>https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg</code>
+                </i>
+            </small>
+
+            <div class="mt-4">
+                {{ Form::button('<i class="fa-solid fa-floppy-disk"></i> Save', ['type' => 'submit', 'class' => 'btn btn-neutral'] )  }}
+                {{ Form::button('<i class="fa-solid fa-rotate"></i> Reset', ['type' => 'reset', 'class' => 'btn btn-outline'] )  }}
             </div>
 
-        {!! Form::close() !!}
+            {!! Form::close() !!}
         
     </div>
 </div>
