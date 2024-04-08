@@ -1,8 +1,4 @@
-
-
-@extends('layouts.app')
-@section('main')
-
+<x-app-layout>
 <div class="card mb-4">
     <div class="card-header">
         <h1 class="h3">Show Country</h1>
@@ -42,5 +38,6 @@
         </table>
     </div>
 </div>
-
-@stop
+@include('laravel.country.modals.show')
+@include('laravel.country.modals.delete')
+</x-app-layout>

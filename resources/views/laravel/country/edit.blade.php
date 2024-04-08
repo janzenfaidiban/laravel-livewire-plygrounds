@@ -1,8 +1,5 @@
 
-
-@extends('layouts.app')
-@section('main')
-
+<x-app-layout>
 <div class="card mb-4">
     <div class="card-header">
         <div class="row">
@@ -59,5 +56,4 @@
         
     </div>
 </div>
-
-@stop
+</x-app-layout>
