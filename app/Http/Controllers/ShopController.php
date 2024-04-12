@@ -6,9 +6,11 @@ use App\Models\Shop;
 use Eelcol\LaravelBootstrapAlerts\Facade\BootstrapAlerts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
+use App\Models\Tag;
 
 class ShopController extends Controller
 {
+    public $shops;
     public function index(Request $request)
     {
         $collection =  Shop::with('city','tags')
@@ -24,12 +26,19 @@ class ShopController extends Controller
                 });
         })
         ->get();
-        return view('shop.index', compact('collection','request'));
+
+        return view('laravel.shop.index', compact('collection','request'));
     }
 
     public function create()
     {
-        return view('shop.create');
+        $tags = Tag::query()->pluck('name');
+        $shopTags = Tag::query()->with('shops')
+            ->whereHas('shops', function($query){
+                $query->where('shop_id', $shops['id'] ?? '');
+            })
+            ->pluck('name');
+        return view('laravel.shop.create',compact('tags','shopTags'));
     }
 
     public function store(Request $request)
@@ -56,7 +65,7 @@ class ShopController extends Controller
 
                 $data->save();
 
-                return redirect()->route('shop')->with(BootstrapAlerts::addSuccess('Success! Data has been created'));
+                return redirect()->route('laravel.shops')->with(BootstrapAlerts::addSuccess('Success! Data has been created'));
 
             } catch (\Throwable $th) {
                 return redirect()->back()->with(BootstrapAlerts::addError('Failed! Data can not be created'));
@@ -67,7 +76,7 @@ class ShopController extends Controller
     public function edit($id)
     {
         $item = Shop::find($id);
-        return view('shop.edit', compact('item'));
+        return view('laravel.shop.edit', compact('item'));
     }
 
     public function update(Request $request, $id)
