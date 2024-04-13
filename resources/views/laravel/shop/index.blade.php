@@ -33,6 +33,7 @@
                 <tr>
                     <th>no</th>
                     <th>name</th>
+                    <th>Shop Tags</th>
                     <th>city</th>
                     <th>country</th>
                     <th></th>
@@ -43,6 +44,15 @@
                 <tr>
                     <td>{{ $item->id }}</td>
                     <td>🛍️ {{ $item->name }}</td>
+                    <td class="flex gap-2">
+
+                        @php
+                            $item->tags()->each(function ($tag){
+                                echo '<a href="" class="btn btn-sm">'.$tag->name.'</a>';
+                            });
+                        @endphp
+
+                    </td>
                     <td>🏙️ {{ $item->city->name }}</td>
                     <td><img src="{{ $item->city->country->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->city->country->name }}</td>
                     <td>

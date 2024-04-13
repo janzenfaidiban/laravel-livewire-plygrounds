@@ -90,7 +90,7 @@
                 </label>
 
                 <div class="form-control mt-4">
-                    <x-input-tags :tags="$tags" event="tagsAdded" :shopTags="$shopTags" />
+                    <x-input-tags :tags="$tags" />
                 </div>
 
                 <div class="mt-4">

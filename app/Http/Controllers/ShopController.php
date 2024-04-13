@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
+use App\Models\ShopsTags;
 use Eelcol\LaravelBootstrapAlerts\Facade\BootstrapAlerts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
@@ -33,12 +34,7 @@ class ShopController extends Controller
     public function create()
     {
         $tags = Tag::query()->pluck('name');
-        $shopTags = Tag::query()->with('shops')
-            ->whereHas('shops', function($query){
-                $query->where('shop_id', $shops['id'] ?? '');
-            })
-            ->pluck('name');
-        return view('laravel.shop.create',compact('tags','shopTags'));
+        return view('laravel.shop.create',compact('tags'));
     }
 
     public function store(Request $request)
@@ -61,9 +57,22 @@ class ShopController extends Controller
                 $data = new Shop();
 
                 $data->name = $request->name;
-                $data->flag = $request->flag;
+                $data->city_id = $request->city_id;
 
                 $data->save();
+
+                foreach($request->tags as $item){
+                    $tags = Tag::query()->where(['name' => $item])->first();
+                    if(!$tags){
+                        $tags = Tag::query()->create([
+                            'name' => $item
+                        ]);
+                    }
+                    ShopsTags::query()->updateOrCreate([
+                        'shop_id' => $data->id,
+                        'tag_id' => $tags->id
+                    ]);
+                }
 
                 return redirect()->route('laravel.shops')->with(BootstrapAlerts::addSuccess('Success! Data has been created'));
 
