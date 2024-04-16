@@ -1,5 +1,3 @@
-
-
 <x-app-layout>
 
     <div class="card g-base-100 shadow-xl">
@@ -22,61 +20,65 @@
                         </label>
                     </form>
                 </div> <!-- flex end -->
+
+            </div> <!-- flex end -->
+
+            {!! display_bootstrap_alerts() !!}
+
+            <div class="overflow-x-auto">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>no</th>
+                            <th>name</th>
+                            <th>Shop Tags</th>
+                            <th>city</th>
+                            <th>country</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($collection as $item)
+                    <tr>
+                        <td>{{ $item->id }}</td>
+                        <td>🛍️ {{ $item->name }}</td>
+                        <td class="flex gap-2">
+
+                            @php
+                                $item->tags()->each(function ($tag){
+                                    echo '<a href="" class="btn btn-sm">'.$tag->name.'</a>';
+                                });
+                            @endphp
+
+                        </td>
+                        <td>🏙️ {{ $item->city->name }}</td>
+                        <td><img src="{{ $item->city->country->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->city->country->name }}</td>
+                            <td class="flex justify-end gap-2">
+                                <a href="#"  class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#showModal{{$item->id}}" role="button"><i class="fa-solid fa-file-lines"></i></a>
+                                <a href="{{ route('shops.edit', $item->id) }}" class="btn btn-sm btn-outline"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="#deleteModal{{$item->id}}" class="btn btn-sm btn-ghost" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+
+                        @include('laravel.shop.modals.delete')
+                        @include('laravel.shop.modals.show')
+                    </tr>
+                    @empty
+                        <tr>
+                            <td colspan="7" class="text-center">
+                                <div class="flex justify-content-center">
+                                    <img width="20%" src="{{asset('assets/undraw_no_data.svg')}}" alt="">
+                                    <p>No data</p>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforelse
+                    </tbody>
+                </table>
+            </div>
+
+            {{ $collection->links() }}
+
         </div>
     </div>
 
-
-        {!! display_bootstrap_alerts() !!}
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>no</th>
-                    <th>name</th>
-                    <th>Shop Tags</th>
-                    <th>city</th>
-                    <th>country</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($collection as $item)
-                <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>🛍️ {{ $item->name }}</td>
-                    <td class="flex gap-2">
-
-                        @php
-                            $item->tags()->each(function ($tag){
-                                echo '<a href="" class="btn btn-sm">'.$tag->name.'</a>';
-                            });
-                        @endphp
-
-                    </td>
-                    <td>🏙️ {{ $item->city->name }}</td>
-                    <td><img src="{{ $item->city->country->flag }}" alt="flag picture" class="img-fluid" width="34px"> {{ $item->city->country->name }}</td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showModal{{$item->id}}" role="button">show</a>
-                        <a href="{{ route('shops.edit', $item->id) }}" class="btn btn-sm btn-outline-dark">edit</a>
-                        <a href="#" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$item->id}}" role="button">delete</a>
-                    </td>
-
-                    @include('laravel.shop.modals.delete')
-                    @include('laravel.shop.modals.show')
-                </tr>
-                @empty
-                    <tr>
-                        <td colspan="7" class="text-center">
-                            <div class="flex justify-content-center">
-                                <img width="20%" src="{{asset('assets/undraw_no_data.svg')}}" alt="">
-                                <p>No data</p>
-                            </div>
-                        </td>
-                    </tr>
-                @endforelse
-            </tbody>
-        </table>
-
-    </div>
-</div>
 </x-app-layout>
