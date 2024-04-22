@@ -2,7 +2,7 @@
 <div>
     <label for="">Tags</label>
     <div
-        class="w-full mb-4 mt-2"
+        class="w-full mt-2"
         x-data="{
                     search: '',
                     data: @js($tags),
@@ -47,7 +47,7 @@
             </template>
         </div>
         <div class="bg-white rounded-lg py-2 shadow-md space-y-2" x-show="isTagsOpen" x-cloak @click.outside="isTagsOpen = false">
-            <input type="text" class="form-control block w-full py-2 px-6 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 " placeholder="add or search tags..." x-model="search" />
+            <input type="text" class="form-control block w-full py-2 px-6 ps-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 " placeholder="add or search tags..." x-model="search" @keydown.enter.prevent="addTags(search, true)" />
             <div class="px-4">
                 <template x-if="searchResults().length === 0">
                     <button type="button" x-text="search" @click.prevent="addTags(search, true)" class="block text-md w-full text-left hover:text-red-400"></button>

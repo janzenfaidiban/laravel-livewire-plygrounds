@@ -9,11 +9,29 @@
                 </div>
             </div>
 
-            {!! display_bootstrap_alerts() !!}
-
             {!! Form::open(['wire:submit' => $formType === 'Create' ? 'save' : 'edit']) !!}
 
-                <label class="input input-bordered flex items-center gap-2">
+
+                <div
+                    x-data=" {selectOpen: false, search:'', selectedId: '', selectedName: @entangle('selectedCountry'), data: @entangle('countries'), result: []}"
+                    @click.away="selectOpen = false"
+                >
+                    <x-select-search :name="'country'" event="countryId" label="Country"/>
+                </div>
+                <span class="text-red-500">@error('country') {{ $message }} @enderror</span>
+
+                @if(count($cities) > 0)
+                    <div
+                        x-data=" {selectOpen: false, search:'', selectedId: '', selectedName: @entangle('selectedCity'), data: @entangle('cities'), result: []}"
+                        @click.away="selectOpen = false"
+                        class="mt-2"
+                    >
+                        <x-select-search :name="'cityId'" event="cityId" :data="$cities" label="City" />
+                    </div>
+                    <span class="text-red-500">@error('cityId') {{ $message }} @enderror</span>
+                @endif
+
+                <label class="input input-bordered flex items-center gap-2 mt-4">
                     Shop Name :
                     {!! Form::text('name', old('name' ?? ''),
                             [
@@ -30,23 +48,12 @@
                         <code>Papua Mart</code>
                     </i>
                 </small>
-
-                <label class="form-control w-full mt-4">
-                    {!! Form::select('city_id', App\Models\City::orderBy('name')->pluck('name', 'id'), null,
-                            [
-                                'class' => 'select select-bordered',
-                                'placeholder' => 'Select a city',
-                                'wire:model' => 'city_id'
-
-
-                            ]
-                        )
-                    !!}
-                </label>
+                <span class="text-red-500">@error('name') {{ $message }} @enderror</span>
 
                 <div class="form-control mt-4">
                     <x-input-tags :tags="$tags" event="tagsAdded" :shopTags="$shopTags" />
                 </div>
+                <span class="text-red-500">@error('tagsAdded') {{ $message }} @enderror</span>
 
                 <div class="mt-4">
                     {{ Form::button('<i class="fa-solid fa-floppy-disk"></i> Save', ['type' => 'submit', 'class' => 'btn btn-neutral'] )  }}
