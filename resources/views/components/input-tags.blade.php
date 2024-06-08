@@ -1,4 +1,4 @@
-@props(['tags', 'event' => '', 'shopTags' => []])
+@props(['tags' => [], 'event' => null, 'shopTags' => []])
 <div>
     <label for="">Tags</label>
     <div
@@ -17,7 +17,9 @@
                         const index = this.tagsAdded.indexOf(item);
                         if (index < 0) {
                             this.tagsAdded.push(item);
-                            $wire.dispatch(@js($event), { data: this.tagsAdded });
+                            if (@js($event)){
+                                $wire.dispatch(@js($event), { data: this.tagsAdded });
+                            }
                         }
                         if(newItem) this.data.push(item)
                         this.search = '';
@@ -26,20 +28,25 @@
                         const index = this.tagsAdded.indexOf(item);
                         if (index > -1) {
                           this.tagsAdded.splice(index, 1);
-                          $wire.dispatch(@js($event), { data: this.tagsAdded });
+                          if(@js($event)){
+                            $wire.dispatch(@js($event), { data: this.tagsAdded });
+                          }
                         }
                     }
                 }"
     >
         <div class="flex gap-2 border border-gray-400 min-h-10 rounded-md p-2 flex-wrap cursor-text items-center" @click="isTagsOpen = !isTagsOpen">
             <template x-for="item in tagsAdded">
-                <div class="text-sm p-2 px-2 items-center text-white text-left bg-[#202142] rounded-sm flex gap-2.5">
-                    <span x-text="item"></span>
-                    <button type="button" @click="removeTags(item)">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M7 7L17 17M7 17L17 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+                <div>
+                    <input type="hidden" x-bind:value="item" name="tags[]">
+                    <div class="text-sm p-2 px-2 items-center text-white text-left bg-[#202142] rounded-sm flex gap-2.5">
+                        <span x-text="item"></span>
+                        <button type="button" @click="removeTags(item)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 7L17 17M7 17L17 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </template>
             <template x-if="tagsAdded.length === 0">

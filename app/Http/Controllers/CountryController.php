@@ -14,8 +14,7 @@ class CountryController extends Controller
         $collection =Country::with('shops', 'cities')
         ->when(strlen($request->s) > 0, function ($query) use ($request){
             $query->where('name', 'LIKE', "%$request->s%");
-        })
-        ->paginate(5);
+        })->paginate(5);
         return view('laravel.country.index', compact('collection','request'));
     }
 
@@ -101,12 +100,12 @@ class CountryController extends Controller
 
     public function distroy()
     {
-        // 
+        //
     }
 
     public function restore()
     {
-        // 
+        //
     }
 
     public function delete($id)
@@ -118,6 +117,6 @@ class CountryController extends Controller
 
     public function forceDelete()
     {
-        // 
+        //
     }
 }
